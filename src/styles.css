@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Source+Sans+3:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap');
 
 :root{
-  --paper:#EFEAE1;
+  --paper:#fff;
   --ink:#1A2B2E;
   --inkfade:#52656A;
   --grid: rgba(26,43,46,0.08);
