@@ -16,9 +16,7 @@
   <header>
     <div class="eyebrow">Phase 1 · Pre-Bypass Verification</div>
     <h1>Testing<br>Arterial Line</h1>
-    <svg class="waveform" viewBox="0 0 260 70" fill="none">
-      <path d="M0 50 L40 50 L52 18 L62 62 L74 50 L130 50 L142 30 L152 50 L260 50" stroke="#0F6E6E" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-    </svg>
+    <span class="logo"><img width="50" height="50" src="src/bcit-logo.svg" alt="BCIT logo">  </span>
   </header>
 
   <main>
@@ -103,62 +101,8 @@
     <div class="panel">
       
       <div class="circuit-box">
-        <svg viewBox="0 0 300 210" width="100%">
-          <!-- CENTRIFUGAL PUMPS header with red asterisks -->
-          <text x="20" y="22" font-size="13" fill="#B23A2E" font-weight="700">✱</text>
-          <text x="150" y="22" text-anchor="middle" font-family="'Space Grotesk', sans-serif" font-weight="600" font-size="16" fill="var(--accent)" letter-spacing="0.5">CENTRIFUGAL PUMPS</text>
-          <text x="248" y="22" font-size="13" fill="#B23A2E" font-weight="700">✱</text>
-          <line x1="10" y1="30" x2="260" y2="30" stroke="#1A2B2E" stroke-width="1.5"/>
+        <img src="./src/cpbcircuit.svg" alt="CPB circuit diagram">
 
-          <!-- triangle (pump head) -->
-          <path d="M45 45 L90 95 L20 95 Z" fill="none" stroke="#1A2B2E" stroke-width="2"/>
-          <text x="45" y="42" text-anchor="middle" font-size="12" fill="#1A2B2E">✕</text>
-          <text x="45" y="112" text-anchor="middle" font-family="IBM Plex Mono" font-size="8" fill="#52656A">RECIR.</text>
-
-          <!-- loop from triangle right vertex, sweeping right and down to pressure gauge -->
-          <path d="M90 95 C 150 95 195 60 225 65" fill="none" stroke="#1A2B2E" stroke-width="2"/>
-
-          <!-- pressure gauge -->
-          <circle cx="245" cy="60" r="13" fill="none" stroke="#1A2B2E" stroke-width="2"/>
-          <circle cx="245" cy="60" r="2" fill="#1A2B2E"/>
-          <line x1="245" y1="60" x2="251" y2="53" stroke="#1A2B2E" stroke-width="1.5"/>
-          <text x="245" y="38" text-anchor="middle" font-family="IBM Plex Mono" font-size="8" fill="#52656A">PRESSURE</text>
-
-          <!-- squiggly line from gauge to clamp 1 -->
-          <path d="M250 72 C 256 80 244 88 252 96 C 260 104 248 110 256 118" fill="none" stroke="#1A2B2E" stroke-width="2"/>
-
-          <!-- autoclamp 2 (grid box) on the squiggle -->
-          <rect x="240" y="98" width="22" height="16" fill="none" stroke="#0F6E6E" stroke-width="1.5"/>
-          <line x1="247" y1="98" x2="247" y2="114" stroke="#0F6E6E" stroke-width="1"/>
-          <line x1="254" y1="98" x2="254" y2="114" stroke="#0F6E6E" stroke-width="1"/>
-          <line x1="240" y1="103" x2="262" y2="103" stroke="#0F6E6E" stroke-width="1"/>
-          <line x1="240" y1="109" x2="262" y2="109" stroke="#0F6E6E" stroke-width="1"/>
-          <text x="270" y="108" font-family="IBM Plex Mono" font-size="8" fill="#1A2B2E">2. AUTO CLAMP</text>
-
-          <!-- clamp 1 X + arrow to patient -->
-          <text x="262" y="135" text-anchor="middle" font-size="13" fill="#0F6E6E" font-weight="700">✕</text>
-          <text x="270" y="128" font-family="IBM Plex Mono" font-size="9" fill="#0F6E6E">1.</text>
-          <path d="M260 138 L292 168" stroke="#1A2B2E" stroke-width="2" marker-end="url(#arrow1)"/>
-          <text x="248" y="190" font-family="IBM Plex Mono" font-size="9" fill="#1A2B2E">PATIENT</text>
-
-          <!-- OXY box -->
-          <rect x="18" y="120" width="56" height="28" fill="none" stroke="#1A2B2E" stroke-width="2"/>
-          <text x="46" y="139" text-anchor="middle" font-family="IBM Plex Mono" font-size="10" fill="#1A2B2E">OXY</text>
-          <path d="M20 95 L20 120" stroke="#1A2B2E" stroke-width="2"/>
-
-          <!-- clamp 3, outlet centrifugal pump -->
-          <text x="22" y="172" text-anchor="middle" font-size="13" fill="#0F6E6E" font-weight="700">✕</text>
-          <text x="8" y="166" font-family="IBM Plex Mono" font-size="9" fill="#0F6E6E">3.</text>
-          <line x1="20" y1="148" x2="22" y2="160" stroke="#1A2B2E" stroke-width="2"/>
-          <text x="46" y="195" text-anchor="middle" font-family="IBM Plex Mono" font-size="8" fill="#52656A">(outlet centrifugal pump)</text>
-
-          <defs>
-            <marker id="arrow1" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto">
-              <path d="M0 0 L8 4 L0 8 Z" fill="#1A2B2E"/>
-            </marker>
-          </defs>
-        </svg>
-        <div class="circuit-caption">Centrifugal pump → autoclamp 2 → clamp 1 → patient. Clamp 3 isolates the outlet during recirculation.</div>
       </div>
 
       <div class="checklist">
@@ -174,7 +118,7 @@
 
   <footer>
     <span>CPB PROTOCOL SERIES · 1 OF 4</span>
-    <span class="closed-loop">BCIT</span>
+    
   </footer>
 </div>
 </body>
