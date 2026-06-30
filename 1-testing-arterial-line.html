@@ -16,7 +16,6 @@
   <header>
     <div class="eyebrow">Phase 1 · Pre-Bypass Verification</div>
     <h1>Testing<br>Arterial Line</h1>
-    <div class="subtitle">Confirming circuit integrity, pulsatility, and line patency before the team commits to full cardiopulmonary bypass.</div>
     <svg class="waveform" viewBox="0 0 260 70" fill="none">
       <path d="M0 50 L40 50 L52 18 L62 62 L74 50 L130 50 L142 30 L152 50 L260 50" stroke="#0F6E6E" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
     </svg>
@@ -29,7 +28,7 @@
         <div class="num">1</div>
         <div>
           <div class="step-title">Closed loop communication</div>
-          <div class="step-body">Perfusionist announces intent and surgeon/anaesthetist confirm before any clamp is touched. Nothing proceeds without verbal read-back.</div>
+          <div class="step-body"></div>
           <span class="good">“Testing arterial line”</span>
         </div>
       </div>
@@ -38,20 +37,49 @@
         <div class="num">2</div>
         <div>
           <div class="step-title">Centrifugal only → RAP mode on</div>
-          <div class="step-body">Isolate the centrifugal pump and enable Retrograde Autopriming / RAP mode in preparation for controlled volume testing.</div>
+          
         </div>
       </div>
 
-      <div class="step warn">
-        <div class="num">3</div>
+      <div class="step">
+        <div class="num">3A</div>
         <div>
           <div class="step-title">Pulsatility check</div>
-          <div class="sub-list">
-            <li><span class="sub-letter">A</span>Remove arterial clamp</li>
-            <li><span class="sub-letter">B</span>Test volume — give 100 mL/s fast, observe reservoir volume; pressure should track up/down to baseline MAP</li>
-            <li><span class="sub-letter">C</span>Re-clamp arterial line — apply roller + centrifugal to Position 1, enable autoclamp, remove Clamp 3</li>
+          <div class="step-body">
+            
+            <div class="sub-list">
+              <li>Remove arterial clamp</li>
+              <li>Matches patient pressure</li>
+            </div>
           </div>
-          <div class="callout"><span>⚠</span><span><b>Warning —</b> centrifugal pumps carry retrograde flow risk during this test. Confirm pump head orientation and clamp sequence before removing the arterial clamp.</span></div>
+          <div class="callout"><span>⚠</span><span><b>Warning —</b> centrifugal pumps ✱ see CENTRIFUGAL PUMPS</span></div>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="num">3B</div>
+        <div>
+          <div class="step-title">Test Volume</div>
+          <div class="step-body">
+            
+            <div class="sub-list">
+              <li>Give 100 mls FAST</li>
+              <li>Observer reservoir volume &amp; line pressure &uarr; &amp; &darr; to baseline (MAP)</li>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="num">3C</div>
+        <div>
+          <div class="step-title">Reclamp arterial line: Roller + centrifugal</div>
+          <div class="step-body">
+            
+            <div class="sub-list">
+              <li>Centrifugal only, apply to Position 1, engage autoclamp, remove Clamp 3</li>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -59,7 +87,6 @@
         <div class="num">4</div>
         <div>
           <div class="step-title">Communication</div>
-          <div class="step-body">Report findings back to the table.</div>
           <span class="good">“Line tests well/good”</span>
         </div>
       </div>
@@ -68,19 +95,18 @@
         <div class="num">5</div>
         <div>
           <div class="step-title">Centrifugal only → RAP mode off</div>
-          <div class="step-body">Stand down RAP mode. Circuit returns to standby configuration, ready for the initiation sequence.</div>
         </div>
       </div>
 
     </div>
 
     <div class="panel">
-      <h2>Circuit Reference</h2>
+      
       <div class="circuit-box">
         <svg viewBox="0 0 300 210" width="100%">
           <!-- CENTRIFUGAL PUMPS header with red asterisks -->
           <text x="20" y="22" font-size="13" fill="#B23A2E" font-weight="700">✱</text>
-          <text x="150" y="22" text-anchor="middle" font-family="IBM Plex Mono" font-weight="600" font-size="11" fill="#1A2B2E" letter-spacing="0.5">CENTRIFUGAL PUMPS</text>
+          <text x="150" y="22" text-anchor="middle" font-family="'Space Grotesk', sans-serif" font-weight="600" font-size="16" fill="var(--accent)" letter-spacing="0.5">CENTRIFUGAL PUMPS</text>
           <text x="248" y="22" font-size="13" fill="#B23A2E" font-weight="700">✱</text>
           <line x1="10" y1="30" x2="260" y2="30" stroke="#1A2B2E" stroke-width="1.5"/>
 
@@ -144,16 +170,11 @@
         </ul>
       </div>
 
-      <div class="warn-box">
-        <div class="head">Before removing arterial clamp</div>
-        <p>Confirm centrifugal pump head position and confirm with the team — retrograde flow through an unclamped arterial line is the single highest-risk moment of this test.</p>
-      </div>
-    </div>
   </main>
 
   <footer>
     <span>CPB PROTOCOL SERIES · 1 OF 4</span>
-    <span class="closed-loop">EVERY STEP CLOSED-LOOP CONFIRMED</span>
+    <span class="closed-loop">BCIT</span>
   </footer>
 </div>
 </body>

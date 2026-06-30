@@ -132,7 +132,7 @@ main{
   color:var(--inkfade);
 }
 .sub-list li::before{
-  content:"–";
+  content:"\2014";
   position:absolute; left:0; color:var(--accent); font-weight:700;
 }
 .sub-letter{
