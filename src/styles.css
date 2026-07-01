@@ -85,6 +85,11 @@ main{
   grid-template-columns: 1.5fr 2fr;
   gap:0;
 }
+table {
+  border-collapse: collapse;
+  width: 100%;
+  text-align: center;
+}
 .steps{
   padding:30px 30px 36px 44px;
   border-right:2px solid var(--ink);
@@ -125,7 +130,6 @@ main{
 .sub-list li{
   position:relative;
   padding-left:18px;
-  margin-bottom:6px;
   font-size:14px;
   color:var(--inkfade);
 }

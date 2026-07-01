@@ -1,0 +1,10 @@
+<svg class="mini-wave" viewBox="0 0 40 30" xmlns="http://www.w3.org/2000/svg">
+<path d="M2 18 
+         L6 18
+         C12 18, 11 16, 13 6 
+         Q16 -4, 18 10 
+         Q19 12, 20 10
+         C22 6, 23 16, 25 17
+         Q26 18, 35 18"
+      fill="none" stroke="currentColor" stroke-width="1"
+      stroke-linecap="round" stroke-linejoin="round"/></svg>
