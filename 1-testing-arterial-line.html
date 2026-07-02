@@ -16,6 +16,7 @@
   <header>
     <div class="eyebrow">Phase 1 · Pre-Bypass Verification</div>
     <h1>Testing Arterial Line</h1>
+    <div class="subtitle">Verify arterial cannula position and circuit integrity before initiating cardiopulmonary bypass</div>
     <span class="logo"><img width="50" height="50" src="src/bcit-logo.svg" alt="BCIT logo">  </span>
   </header>
 
@@ -32,30 +33,26 @@
       </div>
 
       <div class="step">
-        <div class="num">2</div>
-        <div>
-          <div class="step-title">Centrifugal only → RAP mode on</div>
-          
-        </div>
-      </div>
-
-      <div class="step">
-        <div class="num">3A</div>
+        <div class="num">2A</div>
         <div>
           <div class="step-title">Pulsatility check</div>
           <div class="step-body">
-            
+            <div class="callout">
+                <span>⚠</span>
+                <span><b>Warning </b><br>For centrifugal pumps, see CIRCUIT REFERENCE</span>
+              </div>
+
             <div class="sub-list">
               <li>Remove arterial clamp</li>
               <li>Matches patient pressure</li>
             </div>
           </div>
-          <div class="callout"><span>⚠</span><span><b>Warning —</b> centrifugal pumps <span style="color: red; font-size: large;">✱</span> see CENTRIFUGAL PUMPS</span></div>
+          <div class="filler" style="margin-top: 180px;"></div>
         </div>
       </div>
 
       <div class="step">
-        <div class="num">3B</div>
+        <div class="num">2B</div>
         <div>
           <div class="step-title">Test Volume</div>
           <div class="step-body">
@@ -64,12 +61,13 @@
               <li>Give 100 mls FAST</li>
               <li>Observer reservoir volume &amp; line pressure &uarr; &amp; &darr; to baseline (MAP)</li>
             </div>
+
           </div>
         </div>
       </div>
 
       <div class="step">
-        <div class="num">3C</div>
+        <div class="num">2C</div>
         <div>
           <div class="step-title">Reclamp arterial line: Roller + centrifugal</div>
           <div class="step-body">
@@ -89,29 +87,33 @@
         </div>
       </div>
 
-      <div class="step">
-        <div class="num">5</div>
-        <div>
-          <div class="step-title">Centrifugal only → RAP mode off</div>
-        </div>
-      </div>
-
     </div>
 
     <div class="panel">
       
-      <div class="circuit-box">
-        <img src="./src/cpbcircuit.svg" alt="CPB circuit diagram">
-
+      <div id="circuit-ref" style="margin-top: 90px;">      
+        <h2>CIRCUIT REFERENCE</h2>
+        <div class="image-box">
+          <img width="480" height="200" src="./src/cpbcircuit.svg" alt="CPB circuit diagram">
+        </div>
+        <div class="checklist">
+          <ul>
+            <li><b>Centrifugal only</b> → RAP mode on</li>
+            <li><b>Add Clamp 3 </b>(outlet, centrifugal pump)</li>
+            <li><b>Remove Clamp 1</b></li>
+            <li><b>Remove / open Autoclamp #2</b></li>
+          </ul>
+        </div>
       </div>
-
-      <div class="checklist">
-        <h2>Clamp Sequence</h2>
-        <ul>
-          <li><b>Add</b> Clamp 3 (outlet, centrifugal pump)</li>
-          <li><b>Remove</b> Clamp 1</li>
-          <li><b>Remove / open</b> Autoclamp #2</li>
-        </ul>
+      
+      <div id="vol-expected-list" style="margin-top: 60px;">
+        <h2>Test Volume - Expected Response</h2>
+        <div class="sub-list checkmark">
+          <li>Reservoir volume decreases</li>
+          <li>Arterial line pressure rises</li>
+          <li>Arterial line pressure returns to the patient's MAP</li>
+          <li>No unexpected, sustained elevation in arterial line pressure</li>
+        </div>
       </div>
 
   </main>

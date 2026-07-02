@@ -60,7 +60,6 @@ h1{
 .subtitle{
   font-size:15px;
   color:var(--inkfade);
-  max-width:560px;
 }
 .logo{
   position:absolute;
@@ -125,6 +124,10 @@ table {
   font-size:17px;
   margin-bottom:6px;
 }
+.step-subtitle {
+  font-size:14px;
+  color:var(--inkfade);
+}
 .step-body{ font-size:14.5px; line-height:1.5; color:var(--ink); }
 .sub-list{ margin:8px 0 0; padding-left:0; list-style:none; }
 .sub-list li{
@@ -135,6 +138,10 @@ table {
 }
 .sub-list li::before{
   content:"\2014";
+  position:absolute; left:0; color:var(--accent); font-weight:700;
+}
+.sub-list.checkmark li::before{
+  content:"\2713";
   position:absolute; left:0; color:var(--accent); font-weight:700;
 }
 .sub-letter{
@@ -150,16 +157,16 @@ table {
   color:#6E2419;
   padding:9px 12px;
   font-family:'IBM Plex Mono', monospace;
-  font-size:12.5px;
+  font-size:14px;
   border-radius:3px;
   display:flex; gap:8px; align-items:flex-start;
 }
-.callout b{ color:var(--warn); }
+.callout b, .warn { color:var(--warn) !important; }
 .good{
   margin-top:8px;
   display:inline-block;
   font-family:'IBM Plex Mono', monospace;
-  font-size:12.5px;
+  font-size:14px;
   background:var(--accent-soft);
   color:var(--ink);
   padding:5px 10px;
@@ -178,31 +185,30 @@ table {
   border-bottom:1.5px solid var(--ink);
   padding-bottom:8px;
 }
-.circuit-box{
+.image-box{
   background:#fff;
   border-radius:4px;
   margin:-16px;
 }
-.circuit-caption{
+.image-caption{
   font-family:'IBM Plex Mono', monospace;
   font-size:11px;
   color:var(--inkfade);
   text-align:center;
   margin-top:8px;
 }
-.checklist{ margin-top:24px; }
+
 .checklist h2{ margin-bottom:10px; }
 .checklist ul{ list-style:none; margin:0; padding:0; }
 .checklist li{
   font-family:'IBM Plex Mono', monospace;
   font-size:13px;
-  padding:8px 0 8px 26px;
-  border-bottom:1px dashed var(--line);
+  padding:4px 0 4px 26px;
   position:relative;
 }
 .checklist li::before{
   content:"";
-  position:absolute; left:0; top:11px;
+  position:absolute; left:0; top:6px;
   width:13px; height:13px;
   border:1.5px solid var(--ink);
 }
@@ -260,7 +266,7 @@ footer .closed-loop{
     font-size: 36px;
    }
   .poster {
-    width: 220mm;
+    width: 240mm;
     max-width: none;
     background: #fff;
     margin: 0 auto;
