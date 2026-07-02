@@ -274,7 +274,9 @@ footer .closed-loop{
     page-break-inside: avoid;
     break-inside: avoid-page;
   }
-
+  .steps, .panel {
+    min-height: 258mm;
+  }
   header,
   main,
   footer {
