@@ -1,132 +1,214 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<title>CPB Initiation</title>
-<link rel="stylesheet" href="./src/styles.css">
-</head>
-<body>
-<div class="poster">
 
-  <header>
-    <div class="eyebrow">Phase 2 · Going on Bypass</div>
-    <h1>CPB Initiation</h1>
-    <span class="logo"><img width="50" height="50" src="src/bcit-logo.svg" alt="BCIT logo">  </span>    
-  </header>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="HandheldFriendly" content="true">
+    <meta name="MobileOptimized" content="320">
+    <meta name="color-scheme" content="light">
 
-  <main>
-    <div class="steps">
+    <title>CPB Initiation</title>
+    <link rel="stylesheet" href="src/styles.css">
+  </head>
 
-      <div class="step">
-        <div class="num">1</div>
-        <div>
-          <div class="step-title">Closed loop communication</div>
-          <span class="good">“Going on bypass”</span>
-        </div>
-      </div>
+  <body>
+    <div class="poster">
 
-      <div class="step">
-        <div class="num">2</div>
-        <div>
-          <div class="step-title">Start timer</div>
-        </div>
-      </div>
+      <header>
+        <div class="eyebrow">Phase 2 · Going on Bypass</div>
+        <h1>CPB Initiation</h1>
+        <div class="subtitle">Structured communication and flow ramp to safely initiate cardiopulmonary bypass</div>
+        <span class="logo"><img width="100%" height="100%" src="src/bcit-logo.svg" alt="BCIT logo"></span>
+      </header>
 
-      <div class="step">
-        <div class="num">3</div>
-        <div>
-          <div class="step-title">Communication</div>
-          <span class="good">“Arterial on”</span>
-          <div class="sub-list">
-            <li>Open arterial clamp</li>
-            <li>Flow less than 500 mL/min</li>
-          </div>
-          
-        </div>
-      </div>
+      <main>
+        <table>
+          <colgroup>
+            <col class="col-num">
+            <col class="col-step">
+            <col class="col-panel">
+          </colgroup>
+          <tbody>
 
-      <div class="step">
-        <div class="num">4</div>
-        <div>
-          <div class="step-title">Communication</div>
-          <span class="good">“Venous Open”</span>
-          <div class="sub-list">
-            <li>Open venous clamp slowly</li>
-            <li>Observe reservoir volume &uarr; increasing, e.g. draining patient</li>
-          </div>
-        </div>
-      </div>
+            <tr>
+              <td>
+                <p>1</p>
+              </td>
+              <td>
+                <div class="step-title">Closed loop communication</div>
+              </td>
+              <td>
+                <span class="quote-box">“Going on bypass”</span>
+              </td>
+            </tr>
 
-      <div class="step">
-        <div class="num">5</div>
-        <div>
-          <div class="step-title">Increase flow / RPMs + increase venous drainage from patient</div>
-          <div class="step-body">See Flow Ramp — Worked Example</div>
-        </div>
-      </div>
+            <tr>
+              <td>
+                <p>2</p>
+              </td>
+              <td>
+                <div class="step-title">Start timer</div>
+              </td>
+              <td>
+                <svg width="50" height="50" viewBox="0 0 64 64" aria-label="timer clock" role="img">
+                  <circle cx="32" cy="36" r="22" fill="none" stroke="currentColor" stroke-width="3" />
+                  <rect x="27" y="4" width="10" height="8" rx="1" fill="currentColor" />
+                  <line x1="32" y1="36" x2="32" y2="24" stroke="currentColor" stroke-width="3" stroke-linecap="round" />
+                  <line x1="32" y1="36" x2="42" y2="40" stroke="currentColor" stroke-width="3" stroke-linecap="round" />
+                </svg>
+              </td>
+            </tr>
 
-      <div class="step">
-        <div class="num">6</div>
-        <div>
-          <div class="step-title">Confirm</div>
-          <div class="sub-list">
-            <li>e2.4 cl</li>
-            <li>Good drainage</li>
-            <li>Zero CVP</li>
-            <li>No ejection</li>
-            <li>Good line pressure</li>
-            <li>Colour difference in lines</li>
-          </div>
-        </div>
-      </div>
+            <tr>
+              <td>
+                <p>3</p>
+              </td>
+              <td>
+                <div class="step-title">Communication</div>
 
-      <div class="step">
-        <div class="num">7</div>
-        <div>
-          <div class="step-title">Communication</div>
-          <span class="good">“Full flow”</span>
-        </div>
-      </div>
+                <ul class="sub-list">
+                  <li>Open arterial clamp</li>
+                  <li>Flow less than 500 mL/min</li>
+                </ul>
+              </td>
 
+              <td>
+                <span class="quote-box">“Arterial on”</span>
+              </td>
+
+            </tr>
+
+            <tr>
+              <td>
+                <p>4</p>
+              </td>
+              <td>
+                <div class="step-title">Communication</div>
+
+                <ul class="sub-list">
+                  <li>Open venous clamp slowly</li>
+                  <li>Observe reservoir volume ↑ increasing (draining patient)</li>
+                </ul>
+              </td>
+              <td>
+                <span class="quote-box">“Venous open”</span>
+              </td>
+            </tr>
+
+            <tr>
+              <td>
+                <p>5</p>
+              </td>
+              <td>
+                <div class="step-title">Increase flow / RPMs + increase venous drainage</div>
+                <div class="step-body">See Flow Ramp — Worked Example</div>
+              </td>
+              <td>
+                <h3>Flow Ramp — Worked Example</h3>
+                <table class="mini-table">
+                  <tr>
+                    <th>Flow</th>
+                    <th>Venous<br>open</th>
+                    <th>CVP</th>
+                    <th>Arterial<br>waveform</th>
+                    <th>Line<br>pressure</th>
+                  </tr>
+                  <tr>
+                    <td>1/4</td>
+                    <td>25%</td>
+                    <td>8</td>
+                    <td><img width="80" height="40" src="src/art-waveform.svg" alt="arterial waveform"></td>
+                    <td>80</td>
+                  </tr>
+                  <tr>
+                    <td>1/2</td>
+                    <td>50%</td>
+                    <td>6</td>
+                    <td><img width="80" height="40" src="src/art-waveform.svg" alt="arterial waveform"></td>
+                    <td>110</td>
+                  </tr>
+                  <tr>
+                    <td>3/4</td>
+                    <td>75%</td>
+                    <td>4</td>
+                    <td><img width="80" height="40" src="src/art-waveform.svg" alt="arterial waveform"></td>
+                    <td>150</td>
+                  </tr>
+                  <tr>
+                    <td>Full</td>
+                    <td>100%</td>
+                    <td>0</td>
+                    <td>
+                      <svg width="80" height="20" class="mini-wave" viewBox="0 0 40 20">
+                        <path d="M0 18 L40 18" fill="none" stroke="currentColor" stroke-width="1"
+                          stroke-linecap="round" />
+                      </svg>
+                    </td>
+                    <td>180</td>
+                  </tr>
+                  <tr>
+                    <td colspan="5">
+                      Flat line = zero ejections
+                    </td>
+                  </tr>
+                </table>
+
+              </td>
+            </tr>
+
+            <tr>
+              <td>
+                <p>6</p>
+              </td>
+              <td>
+                <div class="step-title">Confirm</div>
+                <ul class="sub-list">
+                  <li>e2.4 cl</li>
+                  <li>Good drainage</li>
+                  <li>Zero CVP</li>
+                  <li>No ejection</li>
+                  <li>Good line pressure</li>
+                  <li>Colour difference in lines</li>
+                </ul>
+              </td>
+              <td>
+                <h3>Full-Flow Confirmation</h3>
+                <ul class="checklist">
+                  <li>e2.4 cl</li>
+                  <li>Good drainage</li>
+                  <li>Zero CVP</li>
+                  <li>No ejections</li>
+                  <li>Good line pressure</li>
+                  <li>Colour difference in lines</li>
+                </ul>
+                <div class="callout">
+                  <span>⚠</span>
+                  <span>These <u>must</u> be confirmed <u>before</u> communications</span>
+                </div>
+              </td>
+            </tr>
+
+            <tr>
+              <td>
+                <p>7</p>
+              </td>
+              <td>
+                <div class="step-title">Communication</div>
+              </td>
+              <td>
+                <span class="quote-box">“Full flow”</span>
+              </td>
+            </tr>
+
+          </tbody>
+        </table>
+      </main>
+
+      <footer>
+        <span>CPB PROTOCOL SERIES · 2 OF 4</span>
+      </footer>
     </div>
+  </body>
 
-    <div class="panel">
-      <h2>Flow Ramp — Worked Example</h2>
-      <table>
-        <tr><th>Flow</th><th>Venous<br>open</th><th>CVP</th><th>Arterial<br>waveform</th><th>Line<br>pressure</th></tr>
-        <tr><td>1/4</td><td>25%</td><td>8</td><td>
-          <image width="100" src="src/art-waveform.svg"></td><td>80</td></tr>
-        <tr><td>1/2</td><td>50%</td><td>6</td><td>
-          <image width="100" src="src/art-waveform.svg"></td><td>110</td></tr>
-        <tr><td>3/4</td><td>75%</td><td>4</td><td>
-          <image width="100" src="src/art-waveform.svg"></td><td>150</td></tr>
-        <tr><td>Full</td><td>100%</td><td>0</td><td>
-          <svg  width="100" class="mini-wave" viewBox="0 0 40 20"><path d="M2 18 L58 18" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round"/></svg> 
-          <br>Flat line = zero ejections
-        </td><td>180</td></tr>
-      </table>
-      
-      <div class="checklist" style="margin-top: 100px;">
-        <h2 style="margin-top:24px;">Full-Flow Confirmation</h2>
-        <ul>
-          <li>e2.4 cl</li>
-          <li>Good drainage</li>
-          <li>Zero CVP</li>
-          <li>No ejections</li>
-          <li>Good line pressure</li>
-          <li>Colour difference in lines</li>
-        </ul>
-      </div>
-
-      <div class="warn-box">
-        <div class="head">These <u>Must</u> be confirmed <u>before</u> communications</div>
-      </div>
-    </div>
-  </main>
-
-  <footer>
-    <span>CPB PROTOCOL SERIES · 2 OF 4</span>
-  </footer>
-</div>
-</body>
 </html>

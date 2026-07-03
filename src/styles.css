@@ -83,15 +83,15 @@ header .subtitle {
   position: absolute;
   right: 10px;
   top: 34px;
-  width: 50px;
-  height: 50px;
+  width: 80px;
+  height: 80px;
 }
 
 main {
   padding: 12px 24px;
 }
 /* BODY TABLE */
-main table {
+main>table {
   width: 100%;
   border: 0;
   border-collapse: collapse;
@@ -112,15 +112,15 @@ col.col-panel {
 
 }
 
-main table tr td {
+main > table > tbody > tr > td {
   vertical-align: top;
 }
 
 /* number column */
-main table tr td:first-child {
+main > table > tbody > tr > td:first-child {
   position: relative;
 }
-main table tr td:first-child p{
+main > table > tbody > tr > td:first-child p {
   width: 55px;
   height: 55px;
   background-color: var(--accent-soft);
@@ -132,28 +132,29 @@ main table tr td:first-child p{
   font-family: 'Space Grotesk', sans-serif;
   font-weight: 700;
   font-size: 30px;
-  z-index: 1;
+  margin-block-start: 10px;
+  margin-block-end: 10px;
 }
-main table tr:not(:last-child) td:first-child::after {
+main > table > tbody > tr:not(:last-child) > td:first-child::after {
   content: "";
   position: absolute;
   left: 28px;
-  top: 86px;
+  top: 66px;
   bottom: -32px;
   width: 2px;
   background: var(--line);
   z-index: 0;
 }
 /* step content column */
-main table tr td:nth-child(2) {
-  padding: 28px 18px 10px 6px;
+main > table > tbody > tr > td:nth-child(2) {
+  padding: 18px 18px 10px 6px;
   border-right: 1px solid var(--inkfade);
 }
 
 .step-title {
   font-family: 'Space Grotesk', sans-serif;
   font-weight: 700;
-  font-size: 17px;
+  font-size: 24px;
   margin-bottom: 6px;
 }
 
@@ -177,7 +178,7 @@ main table tr td:nth-child(2) {
 }
 
 .sub-list li::before {
-  content: "–";
+  content: "\2013";
   position: absolute;
   left: 0;
   color: var(--accent);
@@ -185,12 +186,12 @@ main table tr td:nth-child(2) {
 }
 
 /* panel column */
-main table tr td:nth-child(3)  {
+main > table > tbody > tr > td:nth-child(3)  {
   padding: 20px;
   border: 0px solid var(--inkfade);
 }
 
-main table tr td:nth-child(3) h3 {
+main > table > tbody > tr > td:nth-child(3) h3 {
   font-family: 'Space Grotesk', sans-serif;
   font-size: 12px;
   letter-spacing: .12em;
@@ -249,11 +250,11 @@ main table tr td:nth-child(3) h3 {
   color: var(--accent);
 }
 
-.good {
+.quote-box {
   margin-top: 8px;
   display: inline-block;
   font-family: 'IBM Plex Mono', monospace;
-  font-size: 12.5px;
+  font-size: 16px;
   background: var(--accent-soft);
   color: var(--ink);
   padding: 5px 10px;
@@ -278,6 +279,18 @@ main table tr td:nth-child(3) h3 {
 .callout b, .warn {
   color: var(--warn) !important;
 }
+
+.mini-table {
+  width: 100%;
+  border: 1px solid var(--inkfade);
+  border-collapse: collapse;
+  border-spacing: 0;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  text-align: center;
+  table-layout: fixed;
+}
+
 
 /* Footer */
 footer {
@@ -332,7 +345,7 @@ footer .closed-loop {
     break-inside: avoid-page;
   }
 
-  main table {
+  main>table {
     min-height: 258mm;
   }
 
@@ -346,8 +359,6 @@ footer .closed-loop {
   /* keep your existing .step grid; no overrides here */
 
   svg {
-    width: 100%;
-    height: auto;
     shape-rendering: geometricPrecision;
     text-rendering: geometricPrecision;
   }
