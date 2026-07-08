@@ -114,9 +114,12 @@ col.col-panel {
 
 main > table > tbody > tr > td {
   vertical-align: top;
-}
+  font-size: 14.5px;
+  line-height: 1.5;
+  color: var(--inkfade);
+} 
 
-/* number column */
+/* number column 1 */
 main > table > tbody > tr > td:first-child {
   position: relative;
 }
@@ -145,7 +148,8 @@ main > table > tbody > tr:not(:last-child) > td:first-child::after {
   background: var(--line);
   z-index: 0;
 }
-/* step content column */
+/* step content column 2 */
+
 main > table > tbody > tr > td:nth-child(2) {
   padding: 18px 18px 10px 6px;
   border-right: 1px solid var(--inkfade);
@@ -158,38 +162,12 @@ main > table > tbody > tr > td h2,
   font-size: 22px;
   margin-bottom: 6px;
   margin-block-start: 0;
+  text-transform: capitalize;
 }
 
-main > table > tbody > tr > td,
-.step-body {
-  font-size: 14.5px;
-  line-height: 1.5;
-}
-
-.sub-list {
-  margin: 8px 0 0;
-  padding: 0;
-  list-style: none;
-}
-
-.sub-list li {
-  position: relative;
-  padding-left: 18px;
-  margin-bottom: 5px;
-  font-size: 14px;
-  color: var(--inkfade);
-}
-
-.sub-list li::before {
-  content: "\2013";
-  position: absolute;
-  left: 0;
-  color: var(--accent);
-  font-weight: 700;
-}
-
-/* panel column */
+/* panel column 3 */
 main > table > tbody > tr > td:nth-child(3)  {
+  font-family: 'IBM Plex Mono', monospace;
   padding: 20px;
   border: 0px solid var(--inkfade);
 }
@@ -203,7 +181,7 @@ main > table > tbody > tr > td:nth-child(3) h3 {
   font-weight: 800;
 }
 
-/* compoent styles */
+/* component styles */
 
 .image-caption {
   font-family: 'IBM Plex Mono', monospace;
@@ -213,24 +191,96 @@ main > table > tbody > tr > td:nth-child(3) h3 {
   margin-top: 6px;
 }
 
-.checklist {
+/* .mce-content-body specifically to override D2L editor styles */
+.mce-content-body:not([dir=rtl]) blockquote,
+main > table > tbody > tr > td blockquote {
+    display: block;
+    margin-block-start: 10px;
+    margin-block-end: 10px;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    unicode-bidi: isolate;
+
+    margin-top: 8px;
+    display: inline-block;
+    font-size: 16px;
+    background: var(--accent-soft);
+    color: var(--ink);
+    padding: 5px 10px;
+    border-radius: 3px;
+    border: 1px solid var(--accent);
+}
+
+/* .mce-content-body specifically to override D2L editor styles */
+.mce-content-body:not([dir=rtl]) blockquote.warn,
+blockquote.warn {
+  border: 2px solid var(--warn);
+  background: var(--warn-soft);
+  color: #6E2419;
+  padding: 9px 12px;
+  font-size: 14px;
+  line-height: 1.5;
+  border-radius: 3px;
+}
+
+blockquote.warn b{
+  font-weight: 700;
+  font-size: 16px;
+  color: var(--warn);
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  margin-bottom: 5px;
+}
+
+blockquote.warn b::before {
+  content: "\26A0";
+  font-size: 24px;
+  margin-right: 6px;
+  color: var(--warn) !important;
+  display:inline-block;
+}
+
+
+
+/* lists */
+ul, ol{
+  margin: 8px 0 0;
+  padding: 0;
+}
+ul{
+  list-style: none;
+}
+
+ul li, ol li {
+  position: relative;
+  padding-left: 18px;
+  margin-bottom: 5px;
+  font-size: 14px;
+}
+
+ul li::before {
+  content: "\2013";
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-weight: 700;
+}
+
+ul.checklist {
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
-.checklist li {
+ul.checklist li {
   font-family: 'IBM Plex Mono', monospace;
   font-size: 12px;
+  margin: 0;
   padding: 4px 0 4px 24px;
   position: relative;
 }
 
-.checklist li:last-child {
-  border-bottom: none;
-}
-
-.checklist li::before {
+ul.checklist li::before {
   content: "";
   position: absolute;
   left: 0;
@@ -240,7 +290,7 @@ main > table > tbody > tr > td:nth-child(3) h3 {
   border: 1.5px solid var(--ink);
 }
 
-.checklist.checkmark li::before {
+ul.checklist.checkmark li::before {
     content: "\2713";
     position: absolute;
     left: 0;
@@ -249,49 +299,11 @@ main > table > tbody > tr > td:nth-child(3) h3 {
     border: none;
 }
 
-.checklist li b {
+ul.checklist li b {
   color: var(--accent);
 }
 
-.quote-box {
-  margin-top: 8px;
-  display: inline-block;
-  font-family: 'IBM Plex Mono', monospace;
-  font-size: 16px;
-  background: var(--accent-soft);
-  color: var(--ink);
-  padding: 5px 10px;
-  border-radius: 3px;
-  border: 1px solid var(--accent);
-}
-
-.callout {
-  margin-top: 10px;
-  border: 2px solid var(--warn);
-  background: var(--warn-soft);
-  color: #6E2419;
-  padding: 9px 12px;
-  font-size: 14px;
-  line-height: 1.5;
-  border-radius: 3px;
-}
-.callout.warning::before {
-  content: "⚠";
-  font-size: 24px;
-  color: var(--warn) !important;
-  display:inline-block;
-}
-.callout b, .warn {
-  font-family: 'Space Grotesk', sans-serif;
-  font-weight: 700;
-  font-size: 16px;
-  color: var(--warn);
-  letter-spacing: .06em;
-  text-transform: uppercase;
-  margin-bottom: 5px;
-}
-
-.mini-table {
+main > table > tbody > tr > td table {
   width: 100%;
   border: 1px solid var(--inkfade);
   border-collapse: collapse;
@@ -301,18 +313,19 @@ main > table > tbody > tr > td:nth-child(3) h3 {
   text-align: center;
   table-layout: fixed;
 }
-.mini-table th {
+
+main > table > tbody > tr > td table th {
   background: var(--accent-soft);
   color: var(--accent);
   font-weight: 600;
   padding: 4px 8px;
   border-bottom: 1px solid var(--inkfade);
 }
-.mini-table td {
+main > table > tbody > tr > td table td {
   padding: 4px 8px;
   border-bottom: 1px solid var(--inkfade);
 }
-.mini-table.left {
+main > table > tbody > tr > td table .left {
   text-align: left;
 }
 
