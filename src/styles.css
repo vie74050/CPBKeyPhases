@@ -105,6 +105,7 @@ col.col-num {
 
 col.col-step {
   /* auto */
+  min-width: 300px;
 }
 
 col.col-panel {
@@ -148,6 +149,17 @@ main > table > tbody > tr:not(:last-child) > td:first-child::after {
   background: var(--line);
   z-index: 0;
 }
+
+/* non-numbered subrow, continuation of prev row */
+main > table > tbody > tr.subrow > td {
+  padding-top: 0;
+  padding-bottom: 0;
+  border: 0;
+}
+main > table > tbody > tr:not(:last-child).subrow > td:first-child::after {
+  top: 0;
+}
+
 /* step content column 2 */
 
 main > table > tbody > tr > td:nth-child(2) {
@@ -167,7 +179,6 @@ main > table > tbody > tr > td h2,
 
 /* panel column 3 */
 main > table > tbody > tr > td:nth-child(3)  {
-  font-family: 'IBM Plex Mono', monospace;
   padding: 20px;
   border: 0px solid var(--inkfade);
 }
@@ -200,7 +211,6 @@ main > table > tbody > tr > td blockquote {
     margin-inline-start: 0px;
     margin-inline-end: 0px;
     unicode-bidi: isolate;
-
     margin-top: 8px;
     display: inline-block;
     font-size: 16px;
@@ -210,6 +220,11 @@ main > table > tbody > tr > td blockquote {
     border-radius: 3px;
     border: 1px solid var(--accent);
 }
+
+.mce-content-body:not([dir=rtl]) blockquote.box,
+main > table > tbody > tr > td blockquote.box {
+    background: var(--paper);
+} 
 
 /* .mce-content-body specifically to override D2L editor styles */
 .mce-content-body:not([dir=rtl]) blockquote.warn,
@@ -373,7 +388,7 @@ footer .closed-loop {
   }
 
   .poster {
-    width: 240mm;
+    width: 480mm;
     max-width: none;
     background: #fff;
     margin: 0 auto;
@@ -382,6 +397,17 @@ footer .closed-loop {
     break-inside: avoid-page;
   }
 
+  col.col-num {
+    width: 20mm;
+  }
+
+  col.col-step {
+    width: 200mm;
+  }
+
+  col.col-panel {
+    width: 200mm;
+  }
   main>table {
     min-height: 258mm;
   }
