@@ -362,11 +362,43 @@ footer .closed-loop {
 }
 
 
-/* Print settings options: 
-- Letter, Portrait, minimum margins at scale 92 
-- A4, Portrait, minimum margins at scale 100
-*/
+/* ============================================================
+   PRINT — A1 PORTRAIT
+   ------------------------------------------------------------
+   The poster is designed on-screen at a fixed 900px width.
+   Rather than re-authoring font sizes/spacing for print (which
+   would drift from the on-screen design), print scales that
+   exact layout up to fill an A1 sheet using `zoom` + the
+   --print-scale variable below. Every font size, padding, and
+   column width you see on screen scales together, in proportion.
+
+   TO FIT THE PAGE / GO MULTI-SHEET:
+   - Default --print-scale (2.36) fills the usable width of one
+     A1 sheet (594mm page, 15mm margins).
+   - If a poster's content is tall (many steps) and runs onto a
+     2nd sheet, that's expected — steps are kept from splitting
+     mid-content (see `break-inside` rules below), so you can
+     print both sheets and trim/tape them together.
+   - To force everything onto a single sheet instead, lower
+     --print-scale (e.g. 2.0) until the page count in print
+     preview drops to 1.
+   - To fill more of the sheet on a short poster, raise it.
+   - The browser print dialog's own "Scale" / "Fit to page"
+     option also works, and can be combined with --print-scale.
+   - `zoom` prints correctly in Chrome, Edge, and Safari. In
+     Firefox (no print support for `zoom`), use the print
+     dialog's scale option instead to size the poster.
+   ============================================================ */
 @media print {
+
+  :root {
+    --print-scale: 2.36;
+  }
+
+  @page {
+    size: A1 portrait;
+    margin: 15mm;
+  }
 
   html,
   body {
@@ -383,43 +415,43 @@ footer .closed-loop {
     padding: 0;
   }
 
-  h1 {
-    font-size: 36px;
-  }
-
   .poster {
-    width: 480mm;
+    width: 900px;
     max-width: none;
     background: #fff;
     margin: 0 auto;
     box-shadow: none;
-    page-break-inside: avoid;
-    break-inside: avoid-page;
+    zoom: var(--print-scale);
   }
 
-  col.col-num {
-    width: 20mm;
-  }
-
-  col.col-step {
-    width: 200mm;
-  }
-
-  col.col-panel {
-    width: 200mm;
-  }
-  main>table {
-    min-height: 258mm;
-  }
-
+  /* Keep each step's content intact, but let the table itself
+     — and the poster as a whole — flow across multiple sheets
+     when it doesn't fit on one. */
   header,
-  main,
   footer {
+    break-inside: avoid;
     page-break-inside: avoid;
-    break-inside: avoid-page;
+  }
+  footer {
+    display: none;
   }
 
-  /* keep your existing .step grid; no overrides here */
+  main > table > tbody > tr {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  /* Keep a continuation "subrow" attached to the row before it
+     where possible, rather than starting a page right at its edge */
+  main > table > tbody > tr.subrow {
+    break-before: avoid;
+    page-break-before: avoid;
+  }
+
+  main > table > tbody > tr > td table {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
 
   svg {
     shape-rendering: geometricPrecision;
