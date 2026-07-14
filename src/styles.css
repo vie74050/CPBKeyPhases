@@ -27,19 +27,16 @@ body {
   font-family: 'Source Sans 3', sans-serif;
   color: var(--ink);
   padding: 28px 12px;
-}
-
-.poster {
   width: 900px;
   margin: 0 auto;
+  padding: 12px 24px;
   background: var(--paper);
   border: 1px solid var(--ink);
   box-shadow: 0 18px 40px rgba(0, 0, 0, 0.25);
   position: relative;
-  overflow: hidden;
 }
 
-.poster::before {
+body::before {
   content: "";
   position: absolute;
   top: 0;
@@ -50,7 +47,7 @@ body {
 }
 
 header {
-  padding: 38px 44px 22px;
+  padding: 38px 20px 20px;
   border-bottom: 2px solid var(--ink);
   position: relative;
 }
@@ -87,11 +84,8 @@ header .subtitle {
   height: 80px;
 }
 
-main {
-  padding: 12px 24px;
-}
 /* BODY TABLE */
-main>table {
+table {
   width: 100%;
   border: 0;
   border-collapse: collapse;
@@ -113,18 +107,52 @@ col.col-panel {
 
 }
 
-main > table > tbody > tr > td {
+body > table > thead {
+  text-align: left;
+}
+body > table > thead th {
+  font-weight: 400;
+}
+
+body > table > tbody > tr > td {
   vertical-align: top;
   font-size: 14.5px;
   line-height: 1.5;
   color: var(--inkfade);
 } 
 
+/* non-numbered subrow, continuation of prev row */
+body > table > tbody > tr.subrow > td {
+  padding-top: 0;
+  padding-bottom: 0;
+  border: 0;
+}
+
+body > table > tbody > tr > td h2
+{
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+  font-size: 22px;
+  margin-bottom: 6px;
+  margin-block-start: 0;
+  text-transform: capitalize;
+}
+
+body > table > tbody > tr > td h3
+{
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 12px;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  font-weight: 800;
+}
+
 /* number column 1 */
-main > table > tbody > tr > td:first-child {
+body > table > tbody > tr > td:first-child {
   position: relative;
 }
-main > table > tbody > tr > td:first-child p {
+body > table > tbody > tr > td:first-child p {
   width: 55px;
   height: 55px;
   background-color: var(--accent-soft);
@@ -139,7 +167,7 @@ main > table > tbody > tr > td:first-child p {
   margin-block-start: 10px;
   margin-block-end: 10px;
 }
-main > table > tbody > tr:not(:last-child) > td:first-child::after {
+body > table > tbody > tr:not(:last-child) > td:first-child::after {
   content: "";
   position: absolute;
   left: 28px;
@@ -150,46 +178,20 @@ main > table > tbody > tr:not(:last-child) > td:first-child::after {
   z-index: 0;
 }
 
-/* non-numbered subrow, continuation of prev row */
-main > table > tbody > tr.subrow > td {
-  padding-top: 0;
-  padding-bottom: 0;
-  border: 0;
-}
-main > table > tbody > tr:not(:last-child).subrow > td:first-child::after {
+body > table > tbody > tr:not(:last-child).subrow > td:first-child::after {
   top: 0;
 }
 
 /* step content column 2 */
 
-main > table > tbody > tr > td:nth-child(2) {
+body > table > tbody > tr > td:nth-child(2):not([colspan]) {
   padding: 18px 18px 10px 6px;
   border-right: 1px solid var(--inkfade);
 }
 
-main > table > tbody > tr > td h2,
-.step-title {
-  font-family: 'Space Grotesk', sans-serif;
-  font-weight: 700;
-  font-size: 22px;
-  margin-bottom: 6px;
-  margin-block-start: 0;
-  text-transform: capitalize;
-}
-
 /* panel column 3 */
-main > table > tbody > tr > td:nth-child(3)  {
+body > table > tbody > tr > td:nth-child(3)  {
   padding: 20px;
-  border: 0px solid var(--inkfade);
-}
-
-main > table > tbody > tr > td:nth-child(3) h3 {
-  font-family: 'Space Grotesk', sans-serif;
-  font-size: 12px;
-  letter-spacing: .12em;
-  text-transform: uppercase;
-  color: var(--accent);
-  font-weight: 800;
 }
 
 /* component styles */
@@ -204,7 +206,7 @@ main > table > tbody > tr > td:nth-child(3) h3 {
 
 /* .mce-content-body specifically to override D2L editor styles */
 .mce-content-body:not([dir=rtl]) blockquote,
-main > table > tbody > tr > td blockquote {
+table > tbody > tr > td blockquote {
     display: block;
     margin-block-start: 10px;
     margin-block-end: 10px;
@@ -222,7 +224,7 @@ main > table > tbody > tr > td blockquote {
 }
 
 .mce-content-body:not([dir=rtl]) blockquote.box,
-main > table > tbody > tr > td blockquote.box {
+table > tbody > tr > td blockquote.box {
     background: var(--paper);
 } 
 
@@ -255,8 +257,6 @@ blockquote.warn b::before {
   display:inline-block;
 }
 
-
-
 /* lists */
 ul, ol{
   margin: 8px 0 0;
@@ -271,6 +271,12 @@ ul li, ol li {
   padding-left: 18px;
   margin-bottom: 5px;
   font-size: 14px;
+}
+ol {
+  padding-left: 14px;
+}
+ol li {
+  padding-left: 7px;
 }
 
 ul li::before {
@@ -305,10 +311,13 @@ ul.checklist li::before {
   border: 1.5px solid var(--ink);
 }
 
-ul.checklist.checkmark li::before {
+ul.checkmark li::before {
     content: "\2713";
     position: absolute;
     left: 0;
+    top: 5px;
+    width: 12px;
+    height: 12px;
     color: var(--accent);
     font-weight: 700;
     border: none;
@@ -318,7 +327,7 @@ ul.checklist li b {
   color: var(--accent);
 }
 
-main > table > tbody > tr > td table {
+table > tbody > tr > td table {
   width: 100%;
   border: 1px solid var(--inkfade);
   border-collapse: collapse;
@@ -329,21 +338,29 @@ main > table > tbody > tr > td table {
   table-layout: fixed;
 }
 
-main > table > tbody > tr > td table th {
+table > tbody > tr > td table th {
   background: var(--accent-soft);
   color: var(--accent);
   font-weight: 600;
   padding: 4px 8px;
   border-bottom: 1px solid var(--inkfade);
 }
-main > table > tbody > tr > td table td {
+table > tbody > tr > td table td {
   padding: 4px 8px;
   border-bottom: 1px solid var(--inkfade);
 }
-main > table > tbody > tr > td table .left {
+table > tbody > tr > td table .left {
   text-align: left;
 }
 
+code {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  background: #ddd;
+  color: var(--ink);
+  padding: 2px 4px;
+  border-radius: 3px;
+}
 /* Footer */
 footer {
   border-top: 2px solid var(--ink);
@@ -413,9 +430,6 @@ footer .closed-loop {
     display: block;
     justify-content: normal;
     padding: 0;
-  }
-
-  .poster {
     width: 900px;
     max-width: none;
     background: #fff;
@@ -436,19 +450,25 @@ footer .closed-loop {
     display: none;
   }
 
-  main > table > tbody > tr {
+  table thead {
+    display: table-header-group;
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  table > tbody > tr {
     break-inside: avoid;
     page-break-inside: avoid;
   }
 
   /* Keep a continuation "subrow" attached to the row before it
      where possible, rather than starting a page right at its edge */
-  main > table > tbody > tr.subrow {
+  table > tbody > tr.subrow {
     break-before: avoid;
     page-break-before: avoid;
   }
 
-  main > table > tbody > tr > td table {
+  table > tbody > tr > td table {
     break-inside: avoid;
     page-break-inside: avoid;
   }
