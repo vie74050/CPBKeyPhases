@@ -13,236 +13,200 @@
   </head>
 
   <body>
-      <table>
-        <colgroup>
-          <col class="col-num">
-          <col class="col-step">
-          <col class="col-panel">
-        </colgroup>
-
-        <thead>
-          <tr><th colspan="3">
+    <table>
+      <colgroup>
+        <col class="col-num">
+        <col class="col-step">
+        <col class="col-panel">
+      </colgroup>
+      <thead>
+        <tr>
+          <th colspan="3">
             <header>
               <div class="eyebrow">Phase # · eyebrow</div>
               <h1>Heading 1</h1>
               <div class="subtitle">subtitle</div>
               <span class="logo"><img width="100%" height="100%" src="src/bcit-logo.svg" alt="BCIT logo"> </span>
             </header>
-          </th></tr>
-        </thead>
-        <tbody>
-
-          <tr>
-            <td>
-              <p>1</p>
-            </td>
-            <td>
-              <h2>Heading 2</h2>
-              Normal text in column 2 (step column)
-
-              <h3>Note:</h3>
-              <ul>
-                <li>Column 1 is for the numbered circle, </li>
-                <li>Column 2 is for the step title and description, </li>
-                <li>Column 3 is for the panel/reference content.</li>
-              </ul>
-              
-              
-            </td>
-            <td>
-              <h3>Heading 3</h3>
-              Normal text in column 3 (panel/reference column)
-            </td>
-          </tr>
-
-          <tr>
-            <td>
-              <p>2</p>
-            </td>
-            <td>
-              <h2>Numbered Circles</h2>
-              The numbered circle and connecting line are automatic &mdash; to the first column, just add a <code>paragraph</code> with the step number.                
-            </td>
-            <td>
-              <p>e.g. HTML source in column 1</p>
-
-              <code>&lt;p&gt;1&lt;/p&gt;</code>
-            </td>
-          </tr>
-
-          <tr class="subrow">
-            <td></td>
-            <td>
-              <h3>Continuation Row (subrow)</h3>
-              Adds more content underneath an existing step <em>without</em> a new number/circle &mdash; used to align the content in column 2 with the panel content in column 3. 
-              
-              <ul>
-                <li>Class atrribute <code>subrow</code> is added to the row element.</li>
-                <li>Column 1 is left blank.</li>
-              </ul>
-              
-            </td>
-            <td>
-              <p>e.g. HTML source for a continuation row (subrow) </p>
-
-              <code>&lt;tr class="subrow"&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;Continuation content&lt;/td&gt;&lt;td&gt;Panel content&lt;/td&gt;&lt;/tr&gt;</code>
-          </tr>
-
-          <tr>
-            <td>
-              <p>3</p>
-            </td>
-            <td>
-              <h2>Lists</h2>
-              Use the <code>list</code> elements for lists.
-
-              <ul>
-                <li>Unordered list</li>
-              </ul>
-              <br>
-              <ol>
-                <li>Ordered list, default (1, 2, 3, ...)</li>
-              </ol>
-              
-              <ol type="A">
-                <li>Ordered list (A, B, C, ...)</li>
-              </ol>
-              Add the <b>type</b> attribute to the <code>ol</code> element to change the numbering style.
-                              
-            </td>
-            <td>
-              <h3>e.g. HTML source for lists</h3>
-              
-              <br><b>Ordered list type="A, B, C, ..."</b><br>
-              <code>&lt;ol type="A"&gt;&lt;li&gt; text &lt;/li&gt;&lt;/ol&gt;</code><br>
-              This can only be added to the <code>ol</code> element in HTML <code>&lt;/&gt;</code> edit mode, not in the WYSIWYG editor.
-            </td>
-          </tr>
-          
-          <tr class="subrow">
-            <td></td>
-            <td>
-              <h3>Checklist</h3>
-              Use the <code>checklist</code> class on the <code>ul</code> element to create a checklist.
-
-              <ul class="checklist">
-                <li>Checklist item 1</li>
-                <li>Checklist item 2</li>
-              </ul>
-              
-            </td>
-            <td>
-              <h3>e.g. HTML source for checklist</h3>
-
-              <code>&lt;ul class="checklist"&gt;&lt;li&gt; text &lt;/li&gt;&lt;/ul&gt;</code><br>
-              This can only be added to the class attribute if the whole list is selected.
-            </td>
-          </tr>
-
-          <tr class="subrow">
-            <td></td>
-            <td>
-              <h3>Checklist Checkmark</h3>
-              Use the <code>checklist checkmark</code> class on the <code>ul</code> element to create a checklist with checkmarks.
-
-              <ul class="checklist checkmark">
-                <li>Checklist item 1</li>
-                <li>Checklist item 2</li>
-              </ul>
-              
-            </td>
-            <td>
-              <h3>e.g. HTML source for checklist with checkmarks</h3>
-
-              <code>&lt;ul class="checklist checkmark"&gt;&lt;li&gt; text &lt;/li&gt;&lt;/ul&gt;</code><br>
-              This can only be added to the class attribute if the whole list is selected.
-            </td>
-          </tr>
-
-          <tr>
-            <td>
-              <p>4</p>
-            </td>
-            <td>
-              <h2>Blockquote</h2>
-              Used to add a box around a block of text, e.g. for a quote or reference.
-
-              <p>Types of blockquote styles</p>
-              <ul>
-                <li>Default blockquote</li>
-                <li>Blockquote with <code>box</code></li>
-                <li>Blockquote with <code>warn</code></li>
-              </ul>
-
-              <p>Select the text and set the style to blockquote.  Add the class attribute as needed, e.g. <code>box</code> or <code>warn</code>.</p>
-              <p>Attribute class can only be added to the class attribute if the whole block of text is selected.</p>
-            </td>
-            <td>
-              <h3>e.g. HTML source for blockquote</h3>
-
-              <blockquote>"Default"</blockquote><br>
-              <code>&lt;blockquote&gt; Quote text &lt;/blockquote&gt;</code><br>
-
-              <br>
-              <blockquote class="box">Box</blockquote><br>
-              <code>&lt;blockquote class="box"&gt; Box &lt;/blockquote&gt;</code><br>
-              <br>
-
-              <blockquote class="warn">Warn</blockquote><br>
-              <code>&lt;blockquote class="warn"&gt; Warn &lt;/blockquote&gt;</code><br>
-
-              <blockquote class="warn">
-                <b>Warning</b> Bold the "Warning" text to have icon left of title
-              </blockquote><br>
-              <code>&lt;blockquote class="warn"&gt; &lt;b&gt;Warning&lt;/b&gt; Bold the text with icon title &lt;/blockquote&gt;</code><br>
-              
-            </td>
-          </tr>
-
-          <tr>
-            <td>
-              <p>5</p>
-            </td>
-            <td>
-              <h2>Tables</h2>
-              Use the <code>table</code> element to create a table. 
-            </td>
-            <td>
-              <h3>e.g. table</h3>
-
-              <table>
-                <thead>
-                  <tr>
-                    <th>Header 1</th>
-                    <th>Header 2</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>Row 1, Column 1</td>
-                    <td>Row 1, Column 2</td>
-                  </tr>
-                  <tr>
-                    <td>Row 2, Column 1</td>
-                    <td>Row 2, Column 2</td>
-                  </tr>
-                </tbody>
-              </table>
-
-              <ul>
-                <li>Optional: add attribute class <code>left</code> to the table element to left align the content</li>
-              </ul>
-
-            </td>
-          </tr>
-
-        </tbody>
-      </table>
-
-      <footer>
-        <span>Footer</span>
-      </footer>
-    
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            <p>1</p>
+          </td>
+          <td>
+            <h2>Heading 2</h2>
+            Normal text in column 2 (step column)
+            <h3>Note:</h3>
+            <ul>
+              <li>Column 1 is for&nbsp; the numbered circle,</li>
+              <li>Column 2 is for the step title and description,</li>
+              <li>Column 3 is for the panel/reference content.</li>
+            </ul>
+          </td>
+          <td>
+            <h3>Heading 3</h3>
+            Normal text in column 3 (panel/reference column)
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p>2</p>
+          </td>
+          <td>
+            <h2>Numbered Circles</h2>
+            The numbered circle and connecting line are automatic — to the first column, just add a
+            <code>paragraph</code> with the step number.
+          </td>
+          <td>
+            <p>e.g. HTML source in column 1</p>
+            <code>&lt;p&gt;1&lt;/p&gt;</code>
+          </td>
+        </tr>
+        <tr class="subrow">
+          <td></td>
+          <td>
+            <h3>Continuation Row (subrow)</h3>
+            Adds more content underneath an existing step <em>without</em> a new number/circle — used to align the
+            content in column 2 with the panel content in column 3.
+            <ul>
+              <li>Class attribute <code>subrow</code> is added to the row element, <code>tr</code>.</li>
+              <li>Column 1 is left blank.</li>
+            </ul>
+          </td>
+          <td>
+            <p>e.g. HTML source for a continuation row (subrow)</p>
+            <code>&lt;tr <strong>class="subrow"</strong>&gt; ... &lt;/tr&gt;</code>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p>3</p>
+          </td>
+          <td>
+            <h2>Lists</h2>
+            Use the <code>list</code> elements for lists.
+            <ul>
+              <li>Unordered list</li>
+            </ul>
+            <br>
+            <ol>
+              <li>Ordered list, default (1, 2, 3, ...)</li>
+            </ol>
+            <ol type="A">
+              <li>Ordered list (A, B, C, ...)</li>
+            </ol>
+            Add the <b>type</b> attribute to the <code>ol</code> element to change the numbering style.
+          </td>
+          <td>
+            <h3>e.g. HTML source for lists</h3>
+            <br><b>Ordered list type="A, B, C,
+              ..."</b><br><code>&lt;ol <strong>type="A"</strong>&gt; ... &lt;/ol&gt;</code><br>This can only be added to
+            the <code>ol</code> element in HTML <code>&lt;/&gt;</code> edit mode, not in the WYSIWYG editor.
+          </td>
+        </tr>
+        <tr class="subrow">
+          <td></td>
+          <td>
+            <h3>Checklist</h3>
+            Use the <code>checklist</code> class on the <code>ul</code> element to create a checklist.
+            <ul class="checklist">
+              <li>Checklist item 1</li>
+              <li>Checklist item 2</li>
+            </ul>
+          </td>
+          <td>
+            <h3>e.g. HTML source for checklist</h3>
+            <code>&lt;ul <strong>class="checklist"</strong>&gt; ... &lt;/ul&gt;</code><br>This can only be added to the
+            class attribute if the whole list is selected.
+          </td>
+        </tr>
+        <tr class="subrow">
+          <td></td>
+          <td>
+            <h3>Checklist Checkmark</h3>
+            Use the <code>checklist checkmark</code> class on the <code>ul</code> element to create a checklist with
+            checkmarks.
+            <ul class="checklist checkmark">
+              <li>Checklist item 1</li>
+              <li>Checklist item 2</li>
+            </ul>
+          </td>
+          <td>
+            <h3>e.g. HTML source for checklist with checkmarks</h3>
+            <code>&lt;ul <strong>class="checklist checkmark"</strong>&gt; ... &lt;/ul&gt;</code><br>This can only be
+            added to the class attribute if the whole list is selected.
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p>4</p>
+          </td>
+          <td>
+            <h2>Blockquote</h2>
+            Used to add a box around a block of text, e.g. for a quote or reference.
+            <p>Types of blockquote styles</p>
+            <ul>
+              <li>Default blockquote</li>
+              <li>Blockquote with <code>box</code></li>
+              <li>Blockquote with <code>warn</code></li>
+            </ul>
+            <p>Select the text and set the style to blockquote. Add the class attribute as needed, e.g. <code>box</code>
+              or <code>warn</code>.</p>
+            <p>Attribute class can only be added to the class attribute if the whole block of text is selected.</p>
+          </td>
+          <td>
+            <h3>e.g. HTML source for blockquote</h3>
+            <blockquote>"Default"</blockquote>
+            <br><code>&lt;blockquote&gt; Quote text &lt;/blockquote&gt;</code><br><br>
+            <blockquote class="box">Box</blockquote>
+            <br><code>&lt;blockquote <strong>class="box"</strong>&gt; Box &lt;/blockquote&gt;</code><br><br>
+            <blockquote class="warn">Warn</blockquote>
+            <br><code>&lt;blockquote <strong>class="warn"</strong>&gt; Warn &lt;/blockquote&gt;</code><br>
+            <blockquote class="warn"><b>Warning</b> Bold the "Warning" text to have icon left of title</blockquote>
+            <br><code>&lt;blockquote class="warn"&gt; <strong>&lt;b&gt;Warning&lt;/b&gt;</strong> Bold the text with icon title &lt;/blockquote&gt;</code>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p>5</p>
+          </td>
+          <td>
+            <h2>Tables</h2>
+            Use the <code>table</code> element to create a table.
+          </td>
+          <td>
+            <h3>e.g. table</h3>
+            <table>
+              <thead>
+                <tr>
+                  <th>Header 1</th>
+                  <th>Header 2</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Row 1, Column 1</td>
+                  <td>Row 1, Column 2</td>
+                </tr>
+                <tr>
+                  <td>Row 2, Column 1</td>
+                  <td>Row 2, Column 2</td>
+                </tr>
+              </tbody>
+            </table>
+            <ul>
+              <li><b>Optional</b>: add attribute class <code>left</code> to the table element to left align the content
+              </li>
+              <li><code>&lt;table<strong> class="left"</strong>&gt; <b>... </b>&lt;/table&gt;</code></li>
+            </ul>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <footer><span>Footer</span></footer>
   </body>
 
 </html>

@@ -240,7 +240,8 @@ blockquote.warn {
   border-radius: 3px;
 }
 
-blockquote.warn b{
+blockquote.warn b,
+blockquote.warn strong {
   font-weight: 700;
   font-size: 16px;
   color: var(--warn);
@@ -249,7 +250,8 @@ blockquote.warn b{
   margin-bottom: 5px;
 }
 
-blockquote.warn b::before {
+blockquote.warn b::before,
+blockquote.warn strong::before {
   content: "\26A0";
   font-size: 24px;
   margin-right: 6px;
