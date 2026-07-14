@@ -27,19 +27,16 @@ body {
   font-family: 'Source Sans 3', sans-serif;
   color: var(--ink);
   padding: 28px 12px;
-}
-
-.poster {
   width: 900px;
   margin: 0 auto;
+  padding: 12px 24px;
   background: var(--paper);
   border: 1px solid var(--ink);
   box-shadow: 0 18px 40px rgba(0, 0, 0, 0.25);
   position: relative;
-  overflow: hidden;
 }
 
-.poster::before {
+body::before {
   content: "";
   position: absolute;
   top: 0;
@@ -50,7 +47,7 @@ body {
 }
 
 header {
-  padding: 38px 44px 22px;
+  padding: 38px 20px 20px;
   border-bottom: 2px solid var(--ink);
   position: relative;
 }
@@ -87,11 +84,8 @@ header .subtitle {
   height: 80px;
 }
 
-main {
-  padding: 12px 24px;
-}
 /* BODY TABLE */
-main>table {
+table {
   width: 100%;
   border: 0;
   border-collapse: collapse;
@@ -105,6 +99,7 @@ col.col-num {
 
 col.col-step {
   /* auto */
+  min-width: 300px;
 }
 
 col.col-panel {
@@ -112,15 +107,52 @@ col.col-panel {
 
 }
 
-main > table > tbody > tr > td {
-  vertical-align: top;
+body > table > thead {
+  text-align: left;
+}
+body > table > thead th {
+  font-weight: 400;
 }
 
-/* number column */
-main > table > tbody > tr > td:first-child {
+body > table > tbody > tr > td {
+  vertical-align: top;
+  font-size: 14.5px;
+  line-height: 1.5;
+  color: var(--inkfade);
+} 
+
+/* non-numbered subrow, continuation of prev row */
+body > table > tbody > tr.subrow > td {
+  padding-top: 0;
+  padding-bottom: 0;
+  border: 0;
+}
+
+body > table > tbody > tr > td h2
+{
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+  font-size: 22px;
+  margin-bottom: 6px;
+  margin-block-start: 0;
+  text-transform: capitalize;
+}
+
+body > table > tbody > tr > td h3
+{
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 12px;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  font-weight: 800;
+}
+
+/* number column 1 */
+body > table > tbody > tr > td:first-child {
   position: relative;
 }
-main > table > tbody > tr > td:first-child p {
+body > table > tbody > tr > td:first-child p {
   width: 55px;
   height: 55px;
   background-color: var(--accent-soft);
@@ -135,7 +167,7 @@ main > table > tbody > tr > td:first-child p {
   margin-block-start: 10px;
   margin-block-end: 10px;
 }
-main > table > tbody > tr:not(:last-child) > td:first-child::after {
+body > table > tbody > tr:not(:last-child) > td:first-child::after {
   content: "";
   position: absolute;
   left: 28px;
@@ -145,65 +177,24 @@ main > table > tbody > tr:not(:last-child) > td:first-child::after {
   background: var(--line);
   z-index: 0;
 }
-/* step content column */
-main > table > tbody > tr > td:nth-child(2) {
+
+body > table > tbody > tr:not(:last-child).subrow > td:first-child::after {
+  top: 0;
+}
+
+/* step content column 2 */
+
+body > table > tbody > tr > td:nth-child(2):not([colspan]) {
   padding: 18px 18px 10px 6px;
   border-right: 1px solid var(--inkfade);
 }
 
-main > table > tbody > tr > td h2,
-.step-title {
-  font-family: 'Space Grotesk', sans-serif;
-  font-weight: 700;
-  font-size: 22px;
-  margin-bottom: 6px;
-  margin-block-start: 0;
-}
-
-main > table > tbody > tr > td,
-.step-body {
-  font-size: 14.5px;
-  line-height: 1.5;
-}
-
-.sub-list {
-  margin: 8px 0 0;
-  padding: 0;
-  list-style: none;
-}
-
-.sub-list li {
-  position: relative;
-  padding-left: 18px;
-  margin-bottom: 5px;
-  font-size: 14px;
-  color: var(--inkfade);
-}
-
-.sub-list li::before {
-  content: "\2013";
-  position: absolute;
-  left: 0;
-  color: var(--accent);
-  font-weight: 700;
-}
-
-/* panel column */
-main > table > tbody > tr > td:nth-child(3)  {
+/* panel column 3 */
+body > table > tbody > tr > td:nth-child(3)  {
   padding: 20px;
-  border: 0px solid var(--inkfade);
 }
 
-main > table > tbody > tr > td:nth-child(3) h3 {
-  font-family: 'Space Grotesk', sans-serif;
-  font-size: 12px;
-  letter-spacing: .12em;
-  text-transform: uppercase;
-  color: var(--accent);
-  font-weight: 800;
-}
-
-/* compoent styles */
+/* component styles */
 
 .image-caption {
   font-family: 'IBM Plex Mono', monospace;
@@ -213,24 +204,104 @@ main > table > tbody > tr > td:nth-child(3) h3 {
   margin-top: 6px;
 }
 
-.checklist {
+/* .mce-content-body specifically to override D2L editor styles */
+.mce-content-body:not([dir=rtl]) blockquote,
+table > tbody > tr > td blockquote {
+    display: block;
+    margin-block-start: 10px;
+    margin-block-end: 10px;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    unicode-bidi: isolate;
+    margin-top: 8px;
+    display: inline-block;
+    font-size: 16px;
+    background: var(--accent-soft);
+    color: var(--ink);
+    padding: 5px 10px;
+    border-radius: 3px;
+    border: 1px solid var(--accent);
+}
+
+.mce-content-body:not([dir=rtl]) blockquote.box,
+table > tbody > tr > td blockquote.box {
+    background: var(--paper);
+} 
+
+/* .mce-content-body specifically to override D2L editor styles */
+.mce-content-body:not([dir=rtl]) blockquote.warn,
+blockquote.warn {
+  border: 2px solid var(--warn);
+  background: var(--warn-soft);
+  color: #6E2419;
+  padding: 9px 12px;
+  font-size: 14px;
+  line-height: 1.5;
+  border-radius: 3px;
+}
+
+blockquote.warn b{
+  font-weight: 700;
+  font-size: 16px;
+  color: var(--warn);
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  margin-bottom: 5px;
+}
+
+blockquote.warn b::before {
+  content: "\26A0";
+  font-size: 24px;
+  margin-right: 6px;
+  color: var(--warn) !important;
+  display:inline-block;
+}
+
+/* lists */
+ul, ol{
+  margin: 8px 0 0;
+  padding: 0;
+}
+ul{
+  list-style: none;
+}
+
+ul li, ol li {
+  position: relative;
+  padding-left: 18px;
+  margin-bottom: 5px;
+  font-size: 14px;
+}
+ol {
+  padding-left: 14px;
+}
+ol li {
+  padding-left: 7px;
+}
+
+ul li::before {
+  content: "\2013";
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-weight: 700;
+}
+
+ul.checklist {
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
-.checklist li {
+ul.checklist li {
   font-family: 'IBM Plex Mono', monospace;
   font-size: 12px;
+  margin: 0;
   padding: 4px 0 4px 24px;
   position: relative;
 }
 
-.checklist li:last-child {
-  border-bottom: none;
-}
-
-.checklist li::before {
+ul.checklist li::before {
   content: "";
   position: absolute;
   left: 0;
@@ -240,58 +311,23 @@ main > table > tbody > tr > td:nth-child(3) h3 {
   border: 1.5px solid var(--ink);
 }
 
-.checklist.checkmark li::before {
+ul.checkmark li::before {
     content: "\2713";
     position: absolute;
     left: 0;
+    top: 5px;
+    width: 12px;
+    height: 12px;
     color: var(--accent);
     font-weight: 700;
     border: none;
 }
 
-.checklist li b {
+ul.checklist li b {
   color: var(--accent);
 }
 
-.quote-box {
-  margin-top: 8px;
-  display: inline-block;
-  font-family: 'IBM Plex Mono', monospace;
-  font-size: 16px;
-  background: var(--accent-soft);
-  color: var(--ink);
-  padding: 5px 10px;
-  border-radius: 3px;
-  border: 1px solid var(--accent);
-}
-
-.callout {
-  margin-top: 10px;
-  border: 2px solid var(--warn);
-  background: var(--warn-soft);
-  color: #6E2419;
-  padding: 9px 12px;
-  font-size: 14px;
-  line-height: 1.5;
-  border-radius: 3px;
-}
-.callout.warning::before {
-  content: "⚠";
-  font-size: 24px;
-  color: var(--warn) !important;
-  display:inline-block;
-}
-.callout b, .warn {
-  font-family: 'Space Grotesk', sans-serif;
-  font-weight: 700;
-  font-size: 16px;
-  color: var(--warn);
-  letter-spacing: .06em;
-  text-transform: uppercase;
-  margin-bottom: 5px;
-}
-
-.mini-table {
+table > tbody > tr > td table {
   width: 100%;
   border: 1px solid var(--inkfade);
   border-collapse: collapse;
@@ -301,21 +337,30 @@ main > table > tbody > tr > td:nth-child(3) h3 {
   text-align: center;
   table-layout: fixed;
 }
-.mini-table th {
+
+table > tbody > tr > td table th {
   background: var(--accent-soft);
   color: var(--accent);
   font-weight: 600;
   padding: 4px 8px;
   border-bottom: 1px solid var(--inkfade);
 }
-.mini-table td {
+table > tbody > tr > td table td {
   padding: 4px 8px;
   border-bottom: 1px solid var(--inkfade);
 }
-.mini-table.left {
+table > tbody > tr > td table .left {
   text-align: left;
 }
 
+code {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  background: #ddd;
+  color: var(--ink);
+  padding: 2px 4px;
+  border-radius: 3px;
+}
 /* Footer */
 footer {
   border-top: 2px solid var(--ink);
@@ -334,11 +379,43 @@ footer .closed-loop {
 }
 
 
-/* Print settings options: 
-- Letter, Portrait, minimum margins at scale 92 
-- A4, Portrait, minimum margins at scale 100
-*/
+/* ============================================================
+   PRINT — A1 PORTRAIT
+   ------------------------------------------------------------
+   The poster is designed on-screen at a fixed 900px width.
+   Rather than re-authoring font sizes/spacing for print (which
+   would drift from the on-screen design), print scales that
+   exact layout up to fill an A1 sheet using `zoom` + the
+   --print-scale variable below. Every font size, padding, and
+   column width you see on screen scales together, in proportion.
+
+   TO FIT THE PAGE / GO MULTI-SHEET:
+   - Default --print-scale (2.36) fills the usable width of one
+     A1 sheet (594mm page, 15mm margins).
+   - If a poster's content is tall (many steps) and runs onto a
+     2nd sheet, that's expected — steps are kept from splitting
+     mid-content (see `break-inside` rules below), so you can
+     print both sheets and trim/tape them together.
+   - To force everything onto a single sheet instead, lower
+     --print-scale (e.g. 2.0) until the page count in print
+     preview drops to 1.
+   - To fill more of the sheet on a short poster, raise it.
+   - The browser print dialog's own "Scale" / "Fit to page"
+     option also works, and can be combined with --print-scale.
+   - `zoom` prints correctly in Chrome, Edge, and Safari. In
+     Firefox (no print support for `zoom`), use the print
+     dialog's scale option instead to size the poster.
+   ============================================================ */
 @media print {
+
+  :root {
+    --print-scale: 2.36;
+  }
+
+  @page {
+    size: A1 portrait;
+    margin: 15mm;
+  }
 
   html,
   body {
@@ -353,34 +430,48 @@ footer .closed-loop {
     display: block;
     justify-content: normal;
     padding: 0;
-  }
-
-  h1 {
-    font-size: 36px;
-  }
-
-  .poster {
-    width: 240mm;
+    width: 900px;
     max-width: none;
     background: #fff;
     margin: 0 auto;
     box-shadow: none;
-    page-break-inside: avoid;
-    break-inside: avoid-page;
+    zoom: var(--print-scale);
   }
 
-  main>table {
-    min-height: 258mm;
-  }
-
+  /* Keep each step's content intact, but let the table itself
+     — and the poster as a whole — flow across multiple sheets
+     when it doesn't fit on one. */
   header,
-  main,
   footer {
+    break-inside: avoid;
     page-break-inside: avoid;
-    break-inside: avoid-page;
+  }
+  footer {
+    display: none;
   }
 
-  /* keep your existing .step grid; no overrides here */
+  table thead {
+    display: table-header-group;
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  table > tbody > tr {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  /* Keep a continuation "subrow" attached to the row before it
+     where possible, rather than starting a page right at its edge */
+  table > tbody > tr.subrow {
+    break-before: avoid;
+    page-break-before: avoid;
+  }
+
+  table > tbody > tr > td table {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
 
   svg {
     shape-rendering: geometricPrecision;

@@ -13,128 +13,128 @@
   </head>
 
   <body>
-    <div class="poster">
+    <table>
+      <colgroup>
+        <col class="col-num">
+        <col class="col-step">
+        <col class="col-panel">
+      </colgroup>
 
-      <header>
-        <div class="eyebrow">Phase 1 · Pre-Bypass Verification</div>
-        <h1>Testing Arterial Line</h1>
-        <div class="subtitle">Verify arterial cannula position and circuit integrity before initiating cardiopulmonary
-          bypass</div>
-        <span class="logo"><img width="100%" height="100%" src="src/bcit-logo.svg" alt="BCIT logo"> </span>
-      </header>
+      <thead>
+        <tr><th colspan="3">
+          <header>
+            <div class="eyebrow">Phase 1 · Pre-Bypass Verification</div>
+            <h1>Testing Arterial Line</h1>
+            <div class="subtitle">Verify arterial cannula position and circuit integrity before initiating cardiopulmonary
+              bypass</div>
+            <span class="logo"><img width="100%" height="100%" src="src/bcit-logo.svg" alt="BCIT logo"> </span>
+          </header>
+        </th></tr>
+      </thead>
 
-      <main>
-        <table>
-          <colgroup>
-            <col class="col-num">
-            <col class="col-step">
-            <col class="col-panel">
-          </colgroup>
-          <tbody>
+      <tbody>
 
-            <tr>
-              <td>
-                <p>1</p>
-              </td>
-              <td>
-                <h2>Closed loop communication</h2>
-              </td>
-              <td>
-                <span class="quote-box">"Testing arterial line"</span>
-              </td>
-            </tr>
+        <tr>
+          <td>
+            <p>1</p>
+          </td>
+          <td>
+            <h2>Closed loop communication</h2>
+          </td>
+          <td>
+            <blockquote>"Testing arterial line"</blockquote>
+          </td>
+        </tr>
 
-            <tr>
-              <td>
-                <p>2a</p>
-              </td>
-              <td>
-                <h2>Pulsatility check</h2>
-                <div class="callout warning">
-                  <b>Warning</b><br>
-                  For centrifugal pumps, see Circuit Reference →
-                </div>
-                <ul class="sub-list">
-                  <li>Remove arterial clamp</li>
-                  <li>Matches patient pressure</li>
-                </ul>
-                <image id="art-cannula-pos" src="src/arterial-cannula-position.png" width="200" height="267"></image>
-              </td>
-              <td>
-                <h3>Circuit Reference</h3>
-                <div class="image-box">
-                  <img width="400" height="200" src="./src/cpbcircuit.svg" alt="CPB circuit diagram">
-                </div>
+        <tr>
+          <td>
+            <p>2a</p>
+          </td>
+          <td>
+            <h2>Pulsatility check</h2>
+            <blockquote class="warn">
+              <b>Warning</b><br>
+              For centrifugal pumps, see Circuit Reference →
+            </blockquote>
+            <ul>
+              <li>Remove arterial clamp</li>
+              <li>Matches patient pressure</li>
+            </ul>
+            <image id="art-cannula-pos" src="src/arterial-cannula-position.svg" width="200" height="267"></image>
+          </td>
+          <td>
+            <h3>Circuit Reference</h3>
+            <div class="image-box">
+              <img width="400" height="200" src="./src/cpbcircuit.svg" alt="CPB circuit diagram">
+            </div>
 
-                <ul class="checklist">
-                  <li><b class="warn">Centrifugal only</b> → RAP mode on</li>
-                  <li><b>Add</b> Clamp 3 (outlet, centrifugal pump)</li>
-                  <li><b>Remove</b> Clamp 1</li>
-                  <li><b>Remove / open</b> Autoclamp #2</li>
-                </ul>
+            <ul class="checklist">
+              <li><b class="warn">Centrifugal only</b> → RAP mode on</li>
+              <li><b>Add</b> Clamp 3 (outlet, centrifugal pump)</li>
+              <li><b>Remove</b> Clamp 1</li>
+              <li><b>Remove / open</b> Autoclamp #2</li>
+            </ul>
 
-              </td>
-            </tr>
+          </td>
+        </tr>
 
-            <tr>
-              <td>
-                <p>2b</p>
-              </td>
-              <td>
-                <h2>Test Volume</h2>
-                <ul class="sub-list">
-                  <li>Give 100 mls FAST</li>
-                  <li>Observe reservoir volume &amp; line pressure ↑ &amp; ↓ to baseline (MAP)</li>
-                </ul>
-              </td>
-              <td>
-                <h3>Expected Response</h3>
-                <ul class="checklist checkmark">
-                  <li>Reservoir volume decreases</li>
-                  <li>Arterial line pressure rises</li>
-                  <li>Pressure returns to patient's MAP</li>
-                  <li>No unexpected, sustained pressure elevation</li>
-                </ul>
-              </td>
-            </tr>
+        <tr>
+          <td>
+            <p>2b</p>
+          </td>
+          <td>
+            <h2>Test Volume</h2>
+            <ul>
+              <li>Give 100 mls FAST</li>
+              <li>Observe reservoir volume &amp; line pressure ↑ &amp; ↓ to baseline (MAP)</li>
+            </ul>
+          </td>
+          <td>
+            <h3>Expected Response</h3>
+            <ul class="checklist checkmark">
+              <li>Reservoir volume decreases</li>
+              <li>Arterial line pressure rises</li>
+              <li>Pressure returns to patient's MAP</li>
+              <li>No unexpected, sustained pressure elevation</li>
+            </ul>
+          </td>
+        </tr>
 
-            <tr>
-              <td>
-                <p>2c</p>
-              </td>
-              <td>
-                <h2>Reclamp Arterial Line</h2>
-                Roller + centrifugal
-                <ul class="sub-list">
-                  <li>Centrifugal only → apply to Position 1, engage autoclamp, remove Clamp 3</li>
-                </ul>
-              </td>
-            </tr>
+        <tr>
+          <td>
+            <p>2c</p>
+          </td>
+          <td>
+            <h2>Reclamp Arterial Line</h2>
+            Roller + centrifugal
+            <ul>
+              <li>Centrifugal only → apply to Position 1, engage autoclamp, remove Clamp 3</li>
+            </ul>
+          </td>
+        </tr>
 
-            <tr>
-              <td>
-                <p>4</p>
-              </td>
-              <td>
-                <h2>Communication</h2>
-              </td>
-              <td>
-                <span class="quote-box">"Line tests well/good"</span>
-              </td>
-            </tr>
+        <tr>
+          <td>
+            <p>4</p>
+          </td>
+          <td>
+            <h2>Communication</h2>
+          </td>
+          <td>
+            <blockquote>"Line tests well/good"</blockquote>
+          </td>
+        </tr>
 
-          </tbody>
-        </table>
-      </main>
+      </tbody>
+    </table>
 
-      <footer>
-        <span>CPB PROTOCOL SERIES · 1 OF 4</span>
-        <nav class="page-nav" aria-label="Poster navigation">
-          <a aria-disabled="true" aria-label="Previous page">&lt;</a>
-          <a href="2.html" aria-label="Next page">&gt;</a>
-        </nav>
-      </footer>
-    </div>
+    <footer>
+      <span>CPB PROTOCOL SERIES · 1 OF 4</span>
+      <nav class="page-nav" aria-label="Poster navigation">
+        <a aria-disabled="true" aria-label="Previous page">&lt;</a>
+        <a href="2.html" aria-label="Next page">&gt;</a>
+      </nav>
+    </footer>
   </body>
 
 </html>

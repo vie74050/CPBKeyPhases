@@ -13,206 +13,249 @@
   </head>
 
   <body>
-    <div class="poster">
+    <table>
+      <colgroup>
+        <col class="col-num">
+        <col class="col-step">
+        <col class="col-panel">
+      </colgroup>
 
-      <header>
-        <div class="eyebrow">Phase 2 · Going on Bypass</div>
-        <h1>CPB Initiation</h1>
-        <div class="subtitle">Structured communication and flow ramp to safely initiate cardiopulmonary bypass</div>
-        <span class="logo"><img width="100%" height="100%" src="src/bcit-logo.svg" alt="BCIT logo"></span>
-      </header>
+      <thead>
+        <tr><th colspan="3">
+          <header>
+            <div class="eyebrow">Phase 2 · Going on Bypass</div>
+            <h1>CPB Initiation</h1>
+            <div class="subtitle">Structured communication and flow ramp to safely initiate cardiopulmonary bypass</div>
+            <span class="logo"><img width="100%" height="100%" src="src/bcit-logo.svg" alt="BCIT logo"></span>
+          </header>
+        </th></tr>
+      </thead>
 
-      <main>
-        <table>
-          <colgroup>
-            <col class="col-num">
-            <col class="col-step">
-            <col class="col-panel">
-          </colgroup>
-          <tbody>
+      <tbody>
 
-            <tr>
-              <td>
-                <p>1</p>
-              </td>
-              <td>
-                <h2>Closed loop communication</h2>
-              </td>
-              <td>
-                <span class="quote-box">“Going on bypass”</span>
-              </td>
-            </tr>
+        <tr>
+          <td>
+            <p>1</p>
+          </td>
+          <td>
+            <h2>Closed loop communication</h2>
+          </td>
+          <td>
+            <blockquote>"Going on bypass"</blockquote>
+          </td>
+        </tr>
 
-            <tr>
-              <td>
-                <p>2</p>
-              </td>
-              <td>
-                <h2>Start timer</h2>
-              </td>
-              <td>
-                <svg width="50" height="50" viewBox="0 0 64 64" aria-label="timer clock" role="img">
-                  <circle cx="32" cy="36" r="22" fill="none" stroke="currentColor" stroke-width="3" />
-                  <rect x="27" y="4" width="10" height="8" rx="1" fill="currentColor" />
-                  <line x1="32" y1="36" x2="32" y2="24" stroke="currentColor" stroke-width="3" stroke-linecap="round" />
-                  <line x1="32" y1="36" x2="42" y2="40" stroke="currentColor" stroke-width="3" stroke-linecap="round" />
-                </svg>
-              </td>
-            </tr>
+        <tr>
+          <td>
+            <p>2</p>
+          </td>
+          <td>
+            <h2>Start timer <svg width="30" height="30" viewBox="0 0 64 64" aria-label="timer clock" role="img">
+              <circle cx="32" cy="36" r="22" fill="none" stroke="currentColor" stroke-width="3" />
+              <rect x="27" y="4" width="10" height="8" rx="1" fill="currentColor" />
+              <line x1="32" y1="36" x2="32" y2="24" stroke="currentColor" stroke-width="3" stroke-linecap="round" />
+              <line x1="32" y1="36" x2="42" y2="40" stroke="currentColor" stroke-width="3" stroke-linecap="round" />
+            </svg></h2>
 
-            <tr>
-              <td>
-                <p>3</p>
-              </td>
-              <td>
-                <h2>Communication</h2>
+          </td>
+          <td>
 
-                <ul class="sub-list">
-                  <li>Open arterial clamp</li>
-                  <li>Flow less than 500 mL/min</li>
-                </ul>
-              </td>
+            <ul class="checklist">
+              <li>Sweep / FiO<sub>2</sub> on?</li>
+              <li>=/- volatile agent on</li>
+            </ul>
+          </td>
+        </tr>
 
-              <td>
-                <span class="quote-box">“Arterial on”</span>
-              </td>
+        <tr>
+          <td>
+            <p>3</p>
+          </td>
+          <td>
+            <h2>Forward Flow</h2>
+            Ensure pump is working. <br>Do not fill HRT (trickling forward).
 
-            </tr>
+          </td>
 
-            <tr>
-              <td>
-                <p>4</p>
-              </td>
-              <td>
-                <h2>Communication</h2>
+          <td>
+            <blockquote>"Arterial on"</blockquote>
+          </td>
 
-                <ul class="sub-list">
-                  <li>Open venous clamp slowly</li>
-                  <li>Observe reservoir volume ↑ increasing (draining patient)</li>
-                </ul>
-              </td>
-              <td>
-                <span class="quote-box">“Venous open”</span>
-              </td>
-            </tr>
+        </tr>
 
-            <tr>
-              <td>
-                <p>5</p>
-              </td>
-              <td>
-                <h2>Increase flow / RPMs + increase venous drainage</h2>
-                See Flow Ramp — Worked Example
-              </td>
-              <td>
-                <h3>Flow Ramp — Worked Example</h3>
-                <table class="mini-table">
-                  <tr>
-                    <th>Flow</th>
-                    <th>Venous<br>open</th>
-                    <th>CVP</th>
-                    <th>Arterial<br>waveform</th>
-                    <th>Line<br>pressure</th>
-                  </tr>
-                  <tr>
-                    <td>1/4</td>
-                    <td>25%</td>
-                    <td>8</td>
-                    <td><img width="80" height="40" src="src/art-waveform.svg" alt="arterial waveform"></td>
-                    <td>80</td>
-                  </tr>
-                  <tr>
-                    <td>1/2</td>
-                    <td>50%</td>
-                    <td>6</td>
-                    <td><img width="80" height="40" src="src/art-waveform.svg" alt="arterial waveform"></td>
-                    <td>110</td>
-                  </tr>
-                  <tr>
-                    <td>3/4</td>
-                    <td>75%</td>
-                    <td>4</td>
-                    <td><img width="80" height="40" src="src/art-waveform.svg" alt="arterial waveform"></td>
-                    <td>150</td>
-                  </tr>
-                  <tr>
-                    <td>Full</td>
-                    <td>100%</td>
-                    <td>0</td>
-                    <td>
-                      <svg width="80" height="20" class="mini-wave" viewBox="0 0 40 20">
-                        <path d="M0 18 L40 18" fill="none" stroke="currentColor" stroke-width="1"
-                          stroke-linecap="round" />
-                      </svg>
-                    </td>
-                    <td>180</td>
-                  </tr>
-                  <tr>
-                    <td colspan="5">
-                      Flat line = zero ejections
-                    </td>
-                  </tr>
-                </table>
+        <tr>
+          <td>
+            <p>4</p>
+          </td>
+          <td>
+            <h2>Open Venous</h2>
+            Open venous clamp first then communicate.
+          </td>
+          <td>
+            <blockquote>"Venous open"</blockquote>
+          </td>
+        </tr>
 
-              </td>
-            </tr>
+        <tr>
+          <td>
+            <p>5</p>
+          </td>
+          <td>
+            <h2>Increase drainage &amp; forward flow</h2>
+            See Flow Ramp — Worked Example
+          </td>
+          <td>
+            <h3>Flow Ramp — Worked Example</h3>
+            <table>
+              <tr>
 
-            <tr>
-              <td>
-                <p>6</p>
-              </td>
-              <td>
-                <h2>Confirm</h2>
-                <ul class="sub-list">
-                  <li>e2.4 cl</li>
-                  <li>Good drainage</li>
-                  <li>Zero CVP</li>
-                  <li>No ejection</li>
-                  <li>Good line pressure</li>
-                  <li>Colour difference in lines</li>
-                </ul>
-              </td>
-              <td>
-                <h3>Full-Flow Confirmation</h3>
-                <ul class="checklist">
-                  <li>e2.4 cl</li>
-                  <li>Good drainage</li>
-                  <li>Zero CVP</li>
-                  <li>No ejections</li>
-                  <li>Good line pressure</li>
-                  <li>Colour difference in lines</li>
-                </ul>
-                <div class="callout warning">
-                  <b>Warning</b><br>
-                  These <u>must</u> be confirmed <u>before</u> communications
-                </div>
-              </td>
-            </tr>
+                <th>Venous<br>open</th>
+                <th>CVP</th>
+                <th>Arterial<br>waveform</th>
+                <th>Flow</th>
+                <th>Line<br>pressure</th>
+              </tr>
+              <tr>
 
-            <tr>
-              <td>
-                <p>7</p>
-              </td>
-              <td>
-                <h2>Communication</h2>
-              </td>
-              <td>
-                <span class="quote-box">“Full flow”</span>
-              </td>
-            </tr>
+                <td>25%</td>
+                <td>8</td>
+                <td><img width="80" height="40" src="src/art-waveform.svg" alt="arterial waveform"></td>
+                <td><span style="color:red">1/4</span></td>
+                <td>80</td>
+              </tr>
+              <tr>
 
-          </tbody>
-        </table>
-      </main>
+                <td>50%</td>
+                <td>6</td>
+                <td><img width="80" height="40" src="src/art-waveform.svg" alt="arterial waveform"></td>
+                <td><span style="color:red">1/2</span></td>
+                <td>110</td>
+              </tr>
+              <tr>
 
-      <footer>
-        <span>CPB PROTOCOL SERIES · 2 OF 4</span>
-        <nav class="page-nav" aria-label="Poster navigation">
-          <a href="1.html" aria-label="Previous page">&lt;</a>
-          <a href="3.html" aria-label="Next page">&gt;</a>
-        </nav>
-      </footer>
-    </div>
+                <td>75%</td>
+                <td>4</td>
+                <td><img width="80" height="40" src="src/art-waveform.svg" alt="arterial waveform"></td>
+                <td><span style="color:red">3/4</span></td>
+                <td>150</td>
+              </tr>
+              <tr>
+
+                <td>100%</td>
+                <td>0</td>
+                <td>
+                  <svg width="80" height="20" class="mini-wave" viewBox="0 0 40 20">
+                    <path d="M0 18 L40 18" fill="none" stroke="currentColor" stroke-width="1"
+                      stroke-linecap="round" />
+                  </svg>
+                </td>
+                <td><span style="color:red">Full</span></td>
+                <td>180</td>
+              </tr>
+              <tr>
+                <td colspan="5">
+                  Flat line = zero ejections
+                </td>
+              </tr>
+            </table>
+
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            <p>6</p>
+          </td>
+          <td>
+            <h2>Confirm ALL Safety Items</h2>
+            <ol>
+              <li>Adequate venous drainage</li>
+              <li>CVP zero</li>
+              <li>No ejections</li>
+              <li>Good arterialline pressure</li>
+              <li>Colour difference in lines</li>
+              <li>2.4 cardiac index</li>
+            </ol>
+          </td>
+          <td>
+            <h3>Full-Flow Confirmation</h3>
+            <ul class="checklist">
+              <li>Adequate venous drainage</li>
+              <li>CVP zero</li>
+              <li>No ejections</li>
+              <li>Good arterialline pressure (less than 260)</li>
+              <li>Colour difference in lines</li>
+              <li>2.4 cardiac index</li>
+            </ul>
+
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            <p>7</p>
+          </td>
+          <td>
+            <h2>Open Oxygenator / Arterial Line Filter Purge Line</h2>
+          </td>
+          <td></td>
+        </tr>
+
+        <tr>
+          <td>
+            <p>8</p>
+          </td>
+          <td>
+            <h2>Open Manifold and Start CDI Machine</h2>
+          </td>
+          <td></td>
+        </tr>
+
+        <tr>
+          <td>
+            <p>9</p>
+          </td>
+          <td>
+            <h2>Communication</h2>
+          </td>
+          <td>
+            <blockquote>"Full flow"</blockquote> + <br>
+            <blockquote>"Cooling to 32 degrees"</blockquote> or
+            <blockquote>"Staying warm"</blockquote> or
+            <blockquote>"Drifting in temp"</blockquote>
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            <p>10</p>
+          </td>
+          <td>
+            <h2>Arterial + Venous Blood Sample + Act</h2>
+          </td>
+          <td></td>
+        </tr>
+
+        <tr>
+          <td>
+            <p>11</p>
+          </td>
+          <td>
+            <h2>Prepare for Cardioplegia</h2>
+          </td>
+          <td></td>
+        </tr>
+
+      </tbody>
+    </table>
+
+    <footer>
+      <span>CPB PROTOCOL SERIES · 2 OF 4</span>
+      <nav class="page-nav" aria-label="Poster navigation">
+        <a href="1.html" aria-label="Previous page">&lt;</a>
+        <a href="3.html" aria-label="Next page">&gt;</a>
+      </nav>
+    </footer>
   </body>
 
 </html>
