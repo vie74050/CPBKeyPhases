@@ -426,7 +426,17 @@ footer .closed-loop {
   }
 
   body {
-    display: block;
+    display: flex;
+    flex-direction: column;
+    /* Reserve one full A1 content page's height so the footer (see
+       `footer` rule below) has somewhere to be pushed down to. This
+       value is in *pre-zoom* px: A1 (841mm) minus the 15mm top +
+       15mm bottom @page margins = 811mm of usable height, converted
+       to CSS px at 96dpi (~3065px), then divided back down by
+       --print-scale since `zoom` will multiply it back up when it
+       renders. Written as calc() so it stays correct if you change
+       --print-scale above. */
+    min-height: calc(3065px / var(--print-scale));
     justify-content: normal;
     padding: 0;
     width: 900px;
@@ -437,6 +447,19 @@ footer .closed-loop {
     zoom: var(--print-scale);
   }
 
+  /* Pushes the footer to the bottom of the page when there's leftover
+     space (i.e. the whole poster fits on one A1 sheet — the common
+     case). If a poster's content is tall enough to spill onto a 2nd
+     sheet, there's no leftover space to push into, so the footer
+     just prints right after the last step instead — still on the
+     last page, just not flush to the physical bottom edge. This, like
+     the `zoom` scaling above, depends on the browser honoring `zoom`
+     in print (Chrome/Edge/Safari) — in Firefox the footer will follow
+     directly after the content instead of being pushed down. */
+  footer {
+    margin-top: auto;
+  }
+
   /* Keep each step's content intact, but let the table itself
      — and the poster as a whole — flow across multiple sheets
      when it doesn't fit on one. */
@@ -444,9 +467,6 @@ footer .closed-loop {
   footer {
     break-inside: avoid;
     page-break-inside: avoid;
-  }
-  footer {
-    display: none;
   }
 
   table thead {
@@ -467,7 +487,10 @@ footer .closed-loop {
     page-break-before: avoid;
   }
 
-  table > tbody > tr > td table {
+  table > tbody > tr > td table,
+  blockquote,
+  ul,
+  ol {
     break-inside: avoid;
     page-break-inside: avoid;
   }
