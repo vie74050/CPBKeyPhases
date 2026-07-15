@@ -31,7 +31,6 @@ body {
   margin: 0 auto;
   padding: 12px 24px;
   background: var(--paper);
-  border: 1px solid var(--ink);
   box-shadow: 0 18px 40px rgba(0, 0, 0, 0.25);
   position: relative;
 }
@@ -62,9 +61,11 @@ header h1 {
   letter-spacing: -0.01em;
 }
 
-header .subtitle {
+header p {
   font-size: 15px;
   color: var(--inkfade);
+  margin-block-start: 0em;
+  margin-block-end: 0em;
 }
 
 .eyebrow {
@@ -104,7 +105,6 @@ col.col-step {
 
 col.col-panel {
   width: 450px;
-
 }
 
 body > table > thead {
@@ -120,13 +120,6 @@ body > table > tbody > tr > td {
   line-height: 1.5;
   color: var(--inkfade);
 } 
-
-/* non-numbered subrow, continuation of prev row */
-body > table > tbody > tr.subrow > td {
-  padding-top: 0;
-  padding-bottom: 0;
-  border: 0;
-}
 
 body > table > tbody > tr > td h2
 {
@@ -149,10 +142,15 @@ body > table > tbody > tr > td h3
 }
 
 /* number column 1 */
+
 body > table > tbody > tr > td:first-child {
   position: relative;
+  padding-top: 0;
+  padding-bottom: 0;
 }
 body > table > tbody > tr > td:first-child p {
+  z-index: 2;
+  position: relative;
   width: 55px;
   height: 55px;
   background-color: var(--accent-soft);
@@ -171,15 +169,11 @@ body > table > tbody > tr:not(:last-child) > td:first-child::after {
   content: "";
   position: absolute;
   left: 28px;
-  top: 66px;
+  top: 0px;
   bottom: -32px;
   width: 2px;
   background: var(--line);
   z-index: 0;
-}
-
-body > table > tbody > tr:not(:last-child).subrow > td:first-child::after {
-  top: 0;
 }
 
 /* step content column 2 */
@@ -206,7 +200,7 @@ body > table > tbody > tr > td:nth-child(3)  {
 
 /* .mce-content-body specifically to override D2L editor styles */
 .mce-content-body:not([dir=rtl]) blockquote,
-table > tbody > tr > td blockquote {
+blockquote {
     display: block;
     margin-block-start: 10px;
     margin-block-end: 10px;
@@ -214,7 +208,6 @@ table > tbody > tr > td blockquote {
     margin-inline-end: 0px;
     unicode-bidi: isolate;
     margin-top: 8px;
-    display: inline-block;
     font-size: 16px;
     background: var(--accent-soft);
     color: var(--ink);
@@ -222,9 +215,11 @@ table > tbody > tr > td blockquote {
     border-radius: 3px;
     border: 1px solid var(--accent);
 }
-
+blockquote.inline {
+    display: inline-block;
+}
 .mce-content-body:not([dir=rtl]) blockquote.box,
-table > tbody > tr > td blockquote.box {
+blockquote.box {
     background: var(--paper);
 } 
 
@@ -240,7 +235,8 @@ blockquote.warn {
   border-radius: 3px;
 }
 
-blockquote.warn b{
+blockquote.warn b,
+blockquote.warn strong {
   font-weight: 700;
   font-size: 16px;
   color: var(--warn);
@@ -249,9 +245,11 @@ blockquote.warn b{
   margin-bottom: 5px;
 }
 
-blockquote.warn b::before {
+blockquote.warn b::before,
+blockquote.warn strong::before {
   content: "\26A0";
   font-size: 24px;
+  font-weight: normal;
   margin-right: 6px;
   color: var(--warn) !important;
   display:inline-block;
@@ -338,7 +336,8 @@ table > tbody > tr > td table {
   table-layout: fixed;
 }
 
-table > tbody > tr > td table th {
+table > tbody > tr > td table th,
+table > tbody > tr > td table thead td {
   background: var(--accent-soft);
   color: var(--accent);
   font-weight: 600;
@@ -349,7 +348,7 @@ table > tbody > tr > td table td {
   padding: 4px 8px;
   border-bottom: 1px solid var(--inkfade);
 }
-table > tbody > tr > td table .left {
+table > tbody > tr > td table.left {
   text-align: left;
 }
 
@@ -427,7 +426,17 @@ footer .closed-loop {
   }
 
   body {
-    display: block;
+    display: flex;
+    flex-direction: column;
+    /* Reserve one full A1 content page's height so the footer (see
+       `footer` rule below) has somewhere to be pushed down to. This
+       value is in *pre-zoom* px: A1 (841mm) minus the 15mm top +
+       15mm bottom @page margins = 811mm of usable height, converted
+       to CSS px at 96dpi (~3065px), then divided back down by
+       --print-scale since `zoom` will multiply it back up when it
+       renders. Written as calc() so it stays correct if you change
+       --print-scale above. */
+    min-height: calc(3065px / var(--print-scale));
     justify-content: normal;
     padding: 0;
     width: 900px;
@@ -438,6 +447,19 @@ footer .closed-loop {
     zoom: var(--print-scale);
   }
 
+  /* Pushes the footer to the bottom of the page when there's leftover
+     space (i.e. the whole poster fits on one A1 sheet — the common
+     case). If a poster's content is tall enough to spill onto a 2nd
+     sheet, there's no leftover space to push into, so the footer
+     just prints right after the last step instead — still on the
+     last page, just not flush to the physical bottom edge. This, like
+     the `zoom` scaling above, depends on the browser honoring `zoom`
+     in print (Chrome/Edge/Safari) — in Firefox the footer will follow
+     directly after the content instead of being pushed down. */
+  footer {
+    margin-top: auto;
+  }
+
   /* Keep each step's content intact, but let the table itself
      — and the poster as a whole — flow across multiple sheets
      when it doesn't fit on one. */
@@ -446,12 +468,9 @@ footer .closed-loop {
     break-inside: avoid;
     page-break-inside: avoid;
   }
-  footer {
-    display: none;
-  }
 
   table thead {
-    display: table-header-group;
+    display: table-row-group;
     break-inside: avoid;
     page-break-inside: avoid;
   }
@@ -463,12 +482,15 @@ footer .closed-loop {
 
   /* Keep a continuation "subrow" attached to the row before it
      where possible, rather than starting a page right at its edge */
-  table > tbody > tr.subrow {
+  table > tbody > tr.subrow > td{
     break-before: avoid;
     page-break-before: avoid;
   }
 
-  table > tbody > tr > td table {
+  table > tbody > tr > td table,
+  blockquote,
+  ul,
+  ol {
     break-inside: avoid;
     page-break-inside: avoid;
   }
