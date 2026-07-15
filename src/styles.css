@@ -121,13 +121,6 @@ body > table > tbody > tr > td {
   color: var(--inkfade);
 } 
 
-/* non-numbered subrow, continuation of prev row */
-body > table > tbody > tr > td.subrow {
-  padding-top: 0;
-  padding-bottom: 0;
-  border: 0;
-}
-
 body > table > tbody > tr > td h2
 {
   font-family: 'Space Grotesk', sans-serif;
@@ -149,10 +142,15 @@ body > table > tbody > tr > td h3
 }
 
 /* number column 1 */
+
 body > table > tbody > tr > td:first-child {
   position: relative;
+  padding-top: 0;
+  padding-bottom: 0;
 }
 body > table > tbody > tr > td:first-child p {
+  z-index: 2;
+  position: relative;
   width: 55px;
   height: 55px;
   background-color: var(--accent-soft);
@@ -171,15 +169,11 @@ body > table > tbody > tr:not(:last-child) > td:first-child::after {
   content: "";
   position: absolute;
   left: 28px;
-  top: 66px;
+  top: 0px;
   bottom: -32px;
   width: 2px;
   background: var(--line);
   z-index: 0;
-}
-
-body > table > tbody > tr:not(:last-child) > td.subrow:first-child::after {
-  top: 0;
 }
 
 /* step content column 2 */
@@ -468,7 +462,7 @@ footer .closed-loop {
 
   /* Keep a continuation "subrow" attached to the row before it
      where possible, rather than starting a page right at its edge */
-  table > tbody > tr > td.subrow {
+  table > tbody > tr.subrow > td{
     break-before: avoid;
     page-break-before: avoid;
   }

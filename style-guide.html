@@ -23,7 +23,7 @@
         <tr>
           <th colspan="3">
             <header>
-              <div class="eyebrow">Phase # · eyebrow</div>
+              <div class="eyebrow">Phase # · paragraph + attribute class eyebrow</div>
               <h1>Heading 1</h1>
               <p>Header paragraph style</p>
               <span class="logo"><img width="100%" height="100%" src="src/bcit-logo.svg" alt="BCIT logo"> </span>
@@ -57,28 +57,30 @@
           </td>
           <td>
             <h2>Numbered Circles</h2>
-            The numbered circle and connecting line are automatic — to the first column, use a
-            <code>paragraph</code> style with the step number.
-          </td>
-          <td>
-            <p>e.g. HTML source in column 1</p>
-            <code>&lt;p&gt;1&lt;/p&gt;</code>
-          </td>
-        </tr>
-        <tr>
-          <td class="subrow"></td>
-          <td>
-            <h3>Continuation Row (subrow)</h3>
-            Adds more content underneath an existing step <em>without</em> a new number/circle — used to align the
-            content in column 2 Step with the column 3 Panel content.
+            <p>The numbered circle and connecting line are automatic to the first column of a row.</p> 
             <ul>
-              <li>Class attribute <code>subrow</code> is added to Column 1 element.</li>
-              <li>Column 1 is left blank.</li>
+              <li>In column 1, add a <code>paragraph</code> with the step number.</li>
             </ul>
           </td>
           <td>
+            <p>e.g. HTML source in column 1</p>
+            <code>&lt;td&gt;<br><b>&lt;p&gt;1&lt;/p&gt;</b><br>&lt;/td&gt;</code>
+          </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>
+            <h3>Continuation Row (no number)</h3>
+            <ol>
+              <li>Create a new row below the existing row</li>
+              <li>Leave column 1 blank</li>
+            </ol>
+            If column 1 is left blank, <em>no new number/circle</em> is added — used to align the content in column 2 Step with the column 3 Panel content.
+            
+          </td>
+          <td>
             <p>e.g. HTML source for a continuation row (subrow)</p>
-            <code>&lt;td <strong>class="subrow"</strong>&gt;&lt;/td&gt;</code>
+            <code>&lt;td&gt;&lt;/td&gt;</code>
           </td>
         </tr>
         <tr>
@@ -124,7 +126,7 @@
           </td>
         </tr>
         <tr>
-          <td class="subrow"></td>
+          <td></td>
           <td>
             <h3>Checklist</h3>
             <ol>
@@ -141,7 +143,7 @@
           </td>
         </tr>
         <tr>
-          <td class="subrow"></td>
+          <td></td>
           <td>
             <h3>Checklist checkmarked</h3>
             <ol>
@@ -268,7 +270,9 @@
         </tr>
       </tbody>
     </table>
-    <footer><span>Footer</span></footer>
+    <footer>
+      <span>Footer</span>
+    </footer>
   </body>
 
 </html>
