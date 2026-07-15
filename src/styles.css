@@ -61,9 +61,11 @@ header h1 {
   letter-spacing: -0.01em;
 }
 
-header .subtitle {
+header p {
   font-size: 15px;
   color: var(--inkfade);
+  margin-block-start: 0em;
+  margin-block-end: 0em;
 }
 
 .eyebrow {
