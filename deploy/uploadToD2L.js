@@ -10,7 +10,7 @@ const path = require('path');
   await page.goto('https://learn.bcit.ca/d2l/login?noredirect=1');
   await page.fill('input#userName', process.env.D2L_USERNAME);
   await page.fill('input#password', process.env.D2L_PASSWORD);
-  await page.click('button[type="submit"]');
+  await page.click('text=Log In');
   await page.waitForNavigation();
 
   // 2. Navigate to Manage Files (BCIT correct URL)
