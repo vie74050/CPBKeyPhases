@@ -1,0 +1,29 @@
+name: Deploy to D2L
+
+on:
+  push:
+    branches: ["deployD2L"]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Install Playwright
+        run: npx playwright install --with-deps
+
+      - name: Upload to D2L
+        run: node deploy/uploadToD2L.js
+        env:
+          D2L_USERNAME: ${{ secrets.D2L_USERNAME }}
+          D2L_PASSWORD: ${{ secrets.D2L_PASSWORD }}
