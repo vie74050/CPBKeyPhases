@@ -13,8 +13,9 @@ const path = require('path');
   await page.click('button[type="submit"]');
   await page.waitForNavigation();
 
-  // 2. Navigate to Manage Files for your course
-  await page.goto('https://learn.bcit.ca/d2l/le/content/7541/managefiles');
+  // 2. Navigate to Manage Files (BCIT correct URL)
+  await page.goto('https://learn.bcit.ca/d2l/lp/manageFiles/main.d2l?ou=7541');
+  await page.waitForSelector('text=enforced');
 
   // 3. Navigate folder tree
   await page.click('text=enforced');
