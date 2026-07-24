@@ -11,7 +11,6 @@ const path = require('path');
   await page.fill('#userName', process.env.D2L_USERNAME);
   await page.fill('#password', process.env.D2L_PASSWORD);
   await page.click('text=Log In');
-  await page.waitForNavigation({ waitUntil: 'networkidle' });
 
   // 2. Navigate to Manage Files (BCIT correct URL)
   await page.goto('https://learn.bcit.ca/d2l/lp/manageFiles/main.d2l?ou=7541');
