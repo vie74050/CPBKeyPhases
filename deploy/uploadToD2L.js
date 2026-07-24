@@ -13,6 +13,8 @@ const path = require('path');
   await page.click('text=Log In');
 
   // 2. Navigate to Manage Files (BCIT correct URL)
+  // Wait for Brightspace to finish login (minibar appears)
+  await page.waitForSelector('a.d2l-navigation-s-home', { timeout: 20000 });
   await page.goto('https://learn.bcit.ca/d2l/lp/manageFiles/main.d2l?ou=7541');
 
   // 3. Wait for folder tree to load
