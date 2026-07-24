@@ -25,22 +25,29 @@ const path = require('path');
 
   // Upload helper
   async function uploadFiles(page, files) {
-    // Click the BCIT Upload link
-    await page.click('#ctl_6');  // or: await page.click('text=Upload');
+    // Step 1: Click the Upload link in the toolbar
+    await page.click('#ctl_6');  // <a> Upload
 
-    // Wait for the file input to appear
+    // Step 2: Wait for the modal container to appear
+    await page.waitForSelector('#FU_newfiles', { timeout: 10000 });
+
+    // Step 3: Click the modal Upload button to reveal the file input
+    await page.click('#d2l_1_3_857');  // <button> Upload
+
+    // Step 4: Wait for the file input to appear
     await page.waitForSelector('input[type="file"]', { timeout: 10000 });
 
-    // Upload the files
+    // Step 5: Upload the files
     await page.setInputFiles('input[type="file"]', files);
 
-    // Click Add
+    // Step 6: Click Add
     await page.click('text=Add');
 
-    // Handle overwrite
+    // Step 7: Handle overwrite
     const overwrite = await page.$('text=Overwrite');
     if (overwrite) await overwrite.click();
   }
+
 
 
   // 4. Upload all root-level HTML files
